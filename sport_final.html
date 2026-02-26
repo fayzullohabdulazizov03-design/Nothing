@@ -1,0 +1,4529 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sport Akademiyasi — O'zbekiston</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+        --bg: #0a0d1a;
+        --bg2: #0f1225;
+        --bg3: #141830;
+        --bg4: #1a1f3a;
+        --card: #151929;
+        --card2: #1c2040;
+        --bdr: rgba(255, 255, 255, 0.07);
+        --bdrhov: rgba(99, 130, 255, 0.4);
+        --acc: #4f6ef7;
+        --accl: #6b87ff;
+        --accg: rgba(79, 110, 247, 0.22);
+        --grn: #22c55e;
+        --grng: rgba(34, 197, 94, 0.12);
+        --org: #f97316;
+        --orgg: rgba(249, 115, 22, 0.12);
+        --red: #ef4444;
+        --redg: rgba(239, 68, 68, 0.12);
+        --pur: #a855f7;
+        --purg: rgba(168, 85, 247, 0.12);
+        --t1: #e8eaf6;
+        --t2: #8892b0;
+        --t3: #4a5568;
+        --font: 'Outfit', sans-serif;
+        --mono: 'JetBrains Mono', monospace;
+        --r: 14px;
+        --rs: 8px;
+        --sh: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --shb: 0 8px 48px rgba(0, 0, 0, 0.6);
+        --tr: all .22s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font);
+        background:
+            radial-gradient(1200px 700px at -10% -10%, rgba(79, 110, 247, 0.22), transparent 58%),
+            radial-gradient(1000px 600px at 110% 0%, rgba(168, 85, 247, 0.14), transparent 55%),
+            var(--bg);
+        color: var(--t1);
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-attachment: fixed;
+    }
+
+    body.light-theme {
+        --bg: #f3f7ff;
+        --bg2: #eaf0ff;
+        --bg3: #ffffff;
+        --bg4: #dbe7ff;
+        --card: #ffffff;
+        --card2: #eef4ff;
+        --bdr: rgba(16, 24, 40, 0.1);
+        --bdrhov: rgba(79, 110, 247, 0.45);
+        --acc: #3557e5;
+        --accl: #4f6ef7;
+        --accg: rgba(53, 87, 229, 0.16);
+        --grng: rgba(34, 197, 94, 0.16);
+        --orgg: rgba(249, 115, 22, 0.16);
+        --redg: rgba(239, 68, 68, 0.16);
+        --purg: rgba(168, 85, 247, 0.16);
+        --t1: #0f172a;
+        --t2: #475569;
+        --t3: #64748b;
+        --sh: 0 4px 24px rgba(15, 23, 42, 0.08);
+        --shb: 0 8px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    body.light-theme .lbg {
+        background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(79, 110, 247, 0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 40% 50% at 20% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+    }
+
+    body.light-theme .lgrid {
+        background-image: linear-gradient(rgba(15, 23, 42, .04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15, 23, 42, .04) 1px, transparent 1px);
+    }
+
+    body.gradient-theme {
+        --bg: #041412;
+        --bg2: #0b1e1b;
+        --bg3: #112a26;
+        --bg4: #1a3a34;
+        --card: rgba(10, 30, 26, 0.9);
+        --card2: rgba(16, 40, 35, 0.94);
+        --bdr: rgba(167, 243, 208, 0.16);
+        --bdrhov: rgba(45, 212, 191, 0.5);
+        --acc: #2dd4bf;
+        --accl: #99f6e4;
+        --accg: rgba(45, 212, 191, 0.24);
+        --grn: #22c55e;
+        --org: #facc15;
+        --red: #fb7185;
+        --pur: #14b8a6;
+        --grng: rgba(34, 197, 94, 0.18);
+        --orgg: rgba(250, 204, 21, 0.18);
+        --redg: rgba(251, 113, 133, 0.18);
+        --purg: rgba(20, 184, 166, 0.18);
+        --t1: #ecfdf5;
+        --t2: #a7f3d0;
+        --t3: #6ee7b7;
+        --sh: 0 8px 30px rgba(1, 10, 9, 0.55);
+        --shb: 0 12px 52px rgba(1, 10, 9, 0.66);
+        background:
+            radial-gradient(1000px 560px at -5% 50%, rgba(20, 184, 166, 0.22), transparent 62%),
+            radial-gradient(880px 520px at 102% 8%, rgba(34, 197, 94, 0.2), transparent 58%),
+            repeating-linear-gradient(90deg,
+                rgba(236, 253, 245, 0.026) 0px,
+                rgba(236, 253, 245, 0.026) 1px,
+                transparent 1px,
+                transparent 84px),
+            linear-gradient(125deg, #041412 0%, #0f2a26 54%, #1c3f38 100%);
+        background-attachment: fixed;
+    }
+
+    body.gradient-theme .lbg {
+        background:
+            radial-gradient(ellipse 62% 60% at 76% 42%, rgba(45, 212, 191, 0.26) 0%, transparent 60%),
+            radial-gradient(ellipse 46% 58% at 22% 82%, rgba(34, 197, 94, 0.16) 0%, transparent 55%);
+    }
+
+    body.gradient-theme .lgrid {
+        background-image:
+            linear-gradient(rgba(236, 253, 245, .07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(236, 253, 245, .07) 1px, transparent 1px);
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .-webkit-scrollbar-track {
+        background: var(--bg2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--bg4);
+        border-radius: 3px;
+    }
+
+    /* ICON */
+    .ico {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        flex-shrink: 0;
+    }
+
+    .ico svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+    }
+
+    /* ===== LOGIN ===== */
+    #loginPage {
+        display: flex;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .lbg {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 62% 64% at 74% 42%, rgba(79, 110, 247, 0.24) 0%, transparent 62%),
+            radial-gradient(ellipse 46% 56% at 18% 82%, rgba(168, 85, 247, 0.2) 0%, transparent 58%),
+            linear-gradient(125deg, rgba(11, 17, 48, 0.86) 0%, rgba(21, 29, 79, 0.62) 44%, rgba(49, 38, 107, 0.5) 100%);
+    }
+
+    .lgrid {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(199, 213, 255, .08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(199, 213, 255, .08) 1px, transparent 1px);
+        background-size: 48px 48px;
+    }
+
+    .lleft {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .lright {
+        width: 480px;
+        background: color-mix(in srgb, var(--card) 86%, transparent);
+        border-left: 1px solid var(--bdr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 44px;
+        position: relative;
+        z-index: 1;
+        backdrop-filter: blur(12px);
+    }
+
+    .lhero {
+        max-width: 520px;
+    }
+
+    .lbadge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accg);
+        border: 1px solid rgba(79, 110, 247, 0.3);
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accl);
+        margin-bottom: 28px;
+    }
+
+    .lhero h1 {
+        font-size: clamp(32px, 4vw, 50px);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .lhero h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, var(--accl), var(--pur));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .lhero p {
+        font-size: 15px;
+        color: var(--t2);
+        line-height: 1.7;
+    }
+
+    .lstats {
+        display: flex;
+        gap: 28px;
+        margin-top: 36px;
+        padding-top: 28px;
+        border-top: 1px solid var(--bdr);
+    }
+
+    .lsn {
+        font-size: 26px;
+        font-weight: 800;
+    }
+
+    .lsl {
+        font-size: 12px;
+        color: var(--t3);
+        margin-top: 2px;
+    }
+
+    .lform {
+        width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--bdr);
+        background: color-mix(in srgb, var(--bg3) 82%, transparent);
+        box-shadow: var(--shb);
+    }
+
+    .llogobox {
+        margin-bottom: 26px;
+    }
+
+    .llogoicon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--acc), var(--pur));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 14px;
+        box-shadow: 0 6px 20px var(--accg);
+    }
+
+    .llogobox h2 {
+        font-size: 21px;
+        font-weight: 800;
+    }
+
+    .llogobox p {
+        font-size: 12px;
+        color: var(--t3);
+        margin-top: 3px;
+    }
+
+    .tabs {
+        display: flex;
+        background: var(--bg3);
+        border-radius: 10px;
+        padding: 4px;
+        margin-bottom: 22px;
+        border: 1px solid var(--bdr);
+    }
+
+    .tab {
+        flex: 1;
+        padding: 9px;
+        border: none;
+        background: none;
+        border-radius: 7px;
+        font-family: var(--font);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--t2);
+        cursor: pointer;
+        transition: var(--tr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+    }
+
+    .tab.on {
+        background: var(--acc);
+        color: white;
+        box-shadow: 0 2px 12px var(--accg);
+    }
+
+    .tab .ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    .fg {
+        margin-bottom: 15px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .fl {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--t3);
+        margin-bottom: 6px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: .6px;
+    }
+
+    .fi {
+        width: 100%;
+        padding: 11px 14px;
+        background: var(--bg3);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--rs);
+        font-size: 14px;
+        font-family: var(--font);
+        color: var(--t1);
+        outline: none;
+        transition: var(--tr);
+    }
+
+    .fi:focus {
+        border-color: var(--acc);
+        box-shadow: 0 0 0 3px var(--accg);
+    }
+
+    .fi::placeholder {
+        color: var(--t3);
+    }
+
+    .fiw {
+        position: relative;
+    }
+
+    .fiw .ico {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--t3);
+        width: 14px;
+        height: 14px;
+    }
+
+    .fiw .fi {
+        padding-left: 38px;
+    }
+
+    .bmain {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, var(--acc), var(--accl));
+        color: white;
+        border: none;
+        border-radius: var(--rs);
+        font-size: 15px;
+        font-weight: 700;
+        font-family: var(--font);
+        cursor: pointer;
+        transition: var(--tr);
+        box-shadow: 0 4px 18px var(--accg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .bmain:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 26px var(--accg);
+    }
+
+    .bmain .ico {
+        width: 16px;
+        height: 16px;
+    }
+
+    .div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 14px 0;
+        font-size: 12px;
+        color: var(--t3);
+    }
+
+    .div::before,
+    .div::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--bdr);
+    }
+
+    .botp {
+        width: 100%;
+        padding: 11px;
+        background: transparent;
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--rs);
+        color: var(--t2);
+        font-size: 13px;
+        font-weight: 600;
+        font-family: var(--font);
+        cursor: pointer;
+        transition: var(--tr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .botp:hover {
+        border-color: var(--acc);
+        color: var(--acc);
+    }
+
+    .botp .ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    .forgot {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--acc);
+        cursor: pointer;
+        opacity: .75;
+        transition: var(--tr);
+    }
+
+    .forgot:hover {
+        opacity: 1;
+    }
+
+    @media(max-width:900px) {
+        .lleft {
+            display: none;
+        }
+
+        .lright {
+            width: 100%;
+        }
+    }
+
+    /* ===== APP ===== */
+    #app {
+        display: none;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 248px;
+        background: var(--card);
+        border-right: 1px solid var(--bdr);
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        transition: transform .3s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: 14px 0 40px rgba(7, 10, 26, 0.28);
+    }
+
+    .slogo {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--bdr);
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+
+    .slogoico {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--acc), var(--pur));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .slogoico .ico {
+        width: 16px;
+        height: 16px;
+    }
+
+    .slogot {
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    .slogos {
+        font-size: 10px;
+        color: var(--t3);
+    }
+
+    .suser {
+        padding: 13px 20px;
+        border-bottom: 1px solid var(--bdr);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .savt {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--acc), var(--pur));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .suname {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .surole {
+        font-size: 10px;
+        color: var(--t3);
+        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .surole .ico {
+        width: 8px;
+        height: 8px;
+        color: var(--grn);
+    }
+
+    .snav {
+        flex: 1;
+        padding: 10px 0;
+        overflow-y: auto;
+    }
+
+    .nsec {
+        padding: 13px 18px 5px;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--t3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .ni {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 16px;
+        margin: 2px 8px;
+        border-radius: var(--rs);
+        cursor: pointer;
+        transition: var(--tr);
+        color: var(--t2);
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ni .ico {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+    }
+
+    .ni:hover {
+        background: var(--bg3);
+        color: var(--t1);
+        transform: translateX(2px);
+    }
+
+    .ni.on {
+        background: var(--accg);
+        color: var(--accl);
+        border-color: rgba(79, 110, 247, 0.2);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .nbadge {
+        margin-left: auto;
+        background: var(--acc);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 20px;
+    }
+
+    .sfooter {
+        padding: 13px;
+        border-top: 1px solid var(--bdr);
+    }
+
+    .blog {
+        width: 100%;
+        padding: 9px 14px;
+        background: none;
+        border: 1px solid var(--bdr);
+        border-radius: var(--rs);
+        color: var(--t2);
+        font-size: 13px;
+        font-weight: 600;
+        font-family: var(--font);
+        cursor: pointer;
+        transition: var(--tr);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .blog:hover {
+        border-color: var(--red);
+        color: var(--red);
+    }
+
+    .blog .ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    .main {
+        margin-left: 248px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .main::before {
+        content: "";
+        position: fixed;
+        right: -120px;
+        top: 140px;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(79, 110, 247, 0.18), transparent 65%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .topbar {
+        height: 68px;
+        background: var(--card);
+        background: color-mix(in srgb, var(--card) 84%, transparent);
+        border-bottom: 1px solid var(--bdr);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: 0 24px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(12px);
+    }
+
+    .tbl,
+    .tbr {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .tbmid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tbr {
+        justify-self: end;
+    }
+
+    .tbbtn {
+        width: 38px;
+        height: 38px;
+        border-radius: var(--rs);
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--t2);
+        cursor: pointer;
+        transition: var(--tr);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .tbbtn:hover {
+        border-color: var(--acc);
+        color: var(--acc);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(79, 110, 247, 0.2);
+    }
+
+    .tbbtn .ico {
+        width: 16px;
+        height: 16px;
+    }
+
+    .tbtheme-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px;
+        border-radius: 13px;
+        border: 1px solid var(--bdr);
+        background: color-mix(in srgb, var(--bg3) 82%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, #fff 4%, transparent);
+    }
+
+    .tbtheme-btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--t2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        transition: var(--tr);
+    }
+
+    .tbtheme-btn .ico {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tbtheme-btn:hover {
+        border-color: var(--acc);
+        color: var(--accl);
+        transform: translateY(-1px);
+    }
+
+    .tbtheme-btn[data-theme="gradient"] .ico {
+        color: #22c55e;
+    }
+
+    .tbtheme-dot {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--grn);
+        border: 2px solid color-mix(in srgb, var(--card) 84%, transparent);
+        opacity: 0;
+        transform: scale(.7);
+        transition: var(--tr);
+    }
+
+    .tbtheme-btn.on {
+        border-color: var(--acc);
+        color: var(--accl);
+        background: color-mix(in srgb, var(--acc) 22%, var(--bg3));
+        box-shadow: 0 10px 20px color-mix(in srgb, var(--acc) 24%, transparent);
+    }
+
+    .tbtheme-btn.on .tbtheme-dot {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .tbreg {
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        border-radius: 10px;
+        padding: 9px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--t2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tbclock {
+        min-width: 92px;
+        text-align: center;
+        padding: 9px 16px;
+        border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--acc) 40%, var(--bdr));
+        background: linear-gradient(135deg, color-mix(in srgb, var(--bg3) 92%, transparent), color-mix(in srgb, var(--bg4) 76%, transparent));
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--accl);
+        letter-spacing: .6px;
+        box-shadow: 0 8px 20px color-mix(in srgb, var(--acc) 26%, transparent), inset 0 0 0 1px color-mix(in srgb, #fff 10%, transparent);
+    }
+
+    .tbreg .ico {
+        width: 13px;
+        height: 13px;
+        color: var(--acc);
+    }
+
+    .content {
+        padding: 22px;
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    .appf {
+        margin: 0 22px 16px;
+        border: 1px solid var(--bdr);
+        border-radius: 14px;
+        background: color-mix(in srgb, var(--card) 88%, transparent);
+        backdrop-filter: blur(8px);
+        box-shadow: var(--sh);
+    }
+
+    .appfinner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 14px;
+    }
+
+    .appfbrand {
+        font-size: 12px;
+        color: var(--t3);
+        font-weight: 600;
+        letter-spacing: .2px;
+    }
+
+    .appfsocial {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .slink {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--t2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: var(--tr);
+    }
+
+    .slink .ico {
+        width: 16px;
+        height: 16px;
+    }
+
+    .slink:hover {
+        color: var(--acc);
+        border-color: var(--acc);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px var(--accg);
+    }
+
+    .page {
+        display: none;
+    }
+
+    .page.on {
+        display: block;
+        animation: fu .28s ease;
+    }
+
+    @keyframes fu {
+        from {
+            opacity: 0;
+            transform: translateY(10px)
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+
+    /* Page header */
+    .ph {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .phtitle {
+        font-size: 21px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        letter-spacing: -0.2px;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .phtitle .ico {
+        width: 20px;
+        height: 20px;
+        color: var(--acc);
+    }
+
+    .phsub {
+        font-size: 12px;
+        color: var(--t3);
+        margin-top: 4px;
+    }
+
+    .phact {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 15px;
+        border-radius: var(--rs);
+        font-size: 13px;
+        font-weight: 600;
+        font-family: var(--font);
+        cursor: pointer;
+        transition: var(--tr);
+        border: none;
+        transform: translateY(0);
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .btn .ico {
+        width: 13px;
+        height: 13px;
+    }
+
+    .btnp {
+        background: linear-gradient(135deg, var(--acc), var(--accl));
+        color: white;
+        box-shadow: 0 2px 12px var(--accg);
+    }
+
+    .btnp:hover {
+        filter: brightness(1.06);
+        box-shadow: 0 10px 24px var(--accg);
+    }
+
+    .btns {
+        background: var(--bg3);
+        color: var(--t2);
+        border: 1px solid var(--bdr);
+    }
+
+    .btns:hover {
+        border-color: var(--acc);
+        color: var(--acc);
+    }
+
+    .btng {
+        background: var(--grng);
+        color: var(--grn);
+        border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .btng:hover {
+        background: rgba(34, 197, 94, 0.22);
+    }
+
+    .btnr {
+        background: var(--redg);
+        color: var(--red);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    /* Stats */
+    .sr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+        gap: 13px;
+        margin-bottom: 20px;
+    }
+
+    .sc {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 17px 19px;
+        transition: var(--tr);
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--sh);
+    }
+
+    .sc::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, transparent 15%, rgba(255, 255, 255, 0.06) 45%, transparent 70%);
+        transform: translateX(-120%);
+        transition: transform .7s ease;
+        pointer-events: none;
+    }
+
+    .sc:hover {
+        border-color: var(--bdrhov);
+        transform: translateY(-3px);
+        box-shadow: var(--shb);
+    }
+
+    .sc:hover::before {
+        transform: translateX(120%);
+    }
+
+    .sct {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 11px;
+    }
+
+    .scico {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scico .ico {
+        width: 17px;
+        height: 17px;
+    }
+
+    .scval {
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 4px;
+    }
+
+    .sclbl {
+        font-size: 11px;
+        color: var(--t3);
+    }
+
+    .scb {
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 7px;
+        border-radius: 20px;
+    }
+
+    .sBlue .scico {
+        background: rgba(79, 110, 247, .14);
+        color: var(--acc);
+    }
+
+    .sBlue .scval {
+        color: var(--accl);
+    }
+
+    .sGreen .scico {
+        background: var(--grng);
+        color: var(--grn);
+    }
+
+    .sGreen .scval {
+        color: var(--grn);
+    }
+
+    .sOrange .scico {
+        background: var(--orgg);
+        color: var(--org);
+    }
+
+    .sOrange .scval {
+        color: var(--org);
+    }
+
+    .sPurple .scico {
+        background: var(--purg);
+        color: var(--pur);
+    }
+
+    .sPurple .scval {
+        color: var(--pur);
+    }
+
+    .sRed .scico {
+        background: var(--redg);
+        color: var(--red);
+    }
+
+    .sRed .scval {
+        color: var(--red);
+    }
+
+    /* Filter bar */
+    .fbar {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 13px 17px;
+        margin-bottom: 17px;
+    }
+
+    .frow {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .fsrch {
+        flex: 1;
+        min-width: 200px;
+        position: relative;
+    }
+
+    .fsrch .ico {
+        position: absolute;
+        left: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--t3);
+        width: 13px;
+        height: 13px;
+    }
+
+    .fsrch input {
+        width: 100%;
+        padding: 8px 11px 8px 32px;
+        background: var(--bg3);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--rs);
+        color: var(--t1);
+        font-size: 13px;
+        font-family: var(--font);
+        outline: none;
+        transition: var(--tr);
+    }
+
+    .fsrch input:focus {
+        border-color: var(--acc);
+        box-shadow: 0 0 0 3px var(--accg);
+    }
+
+    .fsrch input::placeholder {
+        color: var(--t3);
+    }
+
+    .fsel {
+        padding: 8px 26px 8px 11px;
+        background: var(--bg3);
+        border: 1.5px solid var(--bdr);
+        border-radius: var(--rs);
+        color: var(--t1);
+        font-size: 13px;
+        font-family: var(--font);
+        outline: none;
+        cursor: pointer;
+        transition: var(--tr);
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='%238892b0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+    }
+
+    .fsel:focus {
+        border-color: var(--acc);
+    }
+
+    .fsel option {
+        background: var(--bg2);
+    }
+
+    /* Table */
+    .tc {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: var(--r);
+        overflow: hidden;
+        box-shadow: var(--sh);
+    }
+
+    .thead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 17px;
+        border-bottom: 1px solid var(--bdr);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+    }
+
+    .theadt {
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .theadt .ico {
+        width: 15px;
+        height: 15px;
+        color: var(--acc);
+    }
+
+    .tw {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        padding: 10px 13px;
+        text-align: left;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--t3);
+        text-transform: uppercase;
+        letter-spacing: .7px;
+        background: var(--bg3);
+        border-bottom: 1px solid var(--bdr);
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    thead th .ico {
+        width: 12px;
+        height: 12px;
+        vertical-align: middle;
+    }
+
+    tbody td {
+        padding: 12px 13px;
+        font-size: 13.5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        color: var(--t2);
+        vertical-align: middle;
+    }
+
+    tbody tr {
+        transition: var(--tr);
+    }
+
+    .tblast td {
+        border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) td {
+        background: rgba(255, 255, 255, 0.015);
+    }
+
+    tbody tr:hover td {
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--t1);
+    }
+
+    td b {
+        color: var(--t1);
+        font-weight: 600;
+    }
+
+    /* Badges */
+    .bdg {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 9px;
+        border-radius: 20px;
+        font-size: 11.5px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .bdg .ico {
+        width: 10px;
+        height: 10px;
+    }
+
+    .bBlue {
+        background: rgba(79, 110, 247, .14);
+        color: var(--accl);
+    }
+
+    .bGreen {
+        background: var(--grng);
+        color: var(--grn);
+    }
+
+    .bOrange {
+        background: var(--orgg);
+        color: var(--org);
+    }
+
+    .bRed {
+        background: var(--redg);
+        color: var(--red);
+    }
+
+    .bPurple {
+        background: var(--purg);
+        color: var(--pur);
+    }
+
+    .bGray {
+        background: rgba(255, 255, 255, .06);
+        color: var(--t3);
+    }
+
+    .atag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 9px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+        font-family: var(--mono);
+    }
+
+    .a7 {
+        background: rgba(79, 110, 247, .14);
+        color: #6b87ff;
+    }
+
+    .a16 {
+        background: var(--grng);
+        color: var(--grn);
+    }
+
+    .a31 {
+        background: var(--orgg);
+        color: var(--org);
+    }
+
+    .a56 {
+        background: var(--redg);
+        color: var(--red);
+    }
+
+    /* Pagination */
+    .pgn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 17px;
+        border-top: 1px solid var(--bdr);
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pgi {
+        font-size: 12px;
+        color: var(--t3);
+    }
+
+    .pgb {
+        display: flex;
+        gap: 4px;
+    }
+
+    .pgbtn {
+        min-width: 30px;
+        height: 30px;
+        padding: 0 6px;
+        border-radius: 6px;
+        border: 1px solid var(--bdr);
+        background: var(--bg3);
+        color: var(--t2);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--tr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        font-family: var(--font);
+    }
+
+    .pgbtn .ico {
+        width: 11px;
+        height: 11px;
+    }
+
+    .pgbtn:hover,
+    .pgbtn.on {
+        background: var(--acc);
+        color: white;
+        border-color: var(--acc);
+    }
+
+    .pgbtn:disabled {
+        opacity: .4;
+        cursor: default;
+    }
+
+    /* Progress */
+    .prw {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .prbar {
+        flex: 1;
+        height: 6px;
+        background: var(--bg3);
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .prfill {
+        height: 100%;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--acc), var(--accl));
+        transition: width .8s ease;
+    }
+
+    .prpct {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--t2);
+        min-width: 32px;
+        font-family: var(--mono);
+    }
+
+    /* Charts */
+    .crow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 17px;
+        margin-bottom: 20px;
+    }
+
+    .ccard {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 19px;
+        box-shadow: var(--sh);
+        transition: var(--tr);
+    }
+
+    .ccard:hover {
+        border-color: var(--bdrhov);
+        transform: translateY(-2px);
+    }
+
+    .ctitle {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .ctitle .ico {
+        width: 14px;
+        height: 14px;
+        color: var(--acc);
+    }
+
+    .barchart {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 105px;
+    }
+
+    .bcol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        flex: 1;
+    }
+
+    .bvt {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--t2);
+        font-family: var(--mono);
+    }
+
+    .brect {
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        min-height: 4px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .blbl {
+        font-size: 9px;
+        color: var(--t3);
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* Events */
+    .egrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+        gap: 15px;
+    }
+
+    .ecard {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: var(--r);
+        padding: 19px;
+        transition: var(--tr);
+        cursor: pointer;
+    }
+
+    .ecard:hover {
+        border-color: var(--bdrhov);
+        transform: translateY(-3px);
+        box-shadow: var(--sh);
+    }
+
+    .eico {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 13px;
+    }
+
+    .eico .ico {
+        width: 22px;
+        height: 22px;
+    }
+
+    .ename {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+
+    .emeta {
+        font-size: 12px;
+        color: var(--t3);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 5px;
+    }
+
+    .emeta .ico {
+        width: 12px;
+        height: 12px;
+    }
+
+    .efoot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 13px;
+        padding-top: 11px;
+        border-top: 1px solid var(--bdr);
+    }
+
+    .ecnt {
+        font-size: 12px;
+        color: var(--t2);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .ecnt .ico {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Rank */
+    .rank {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 800;
+    }
+
+    .r1 {
+        background: linear-gradient(135deg, #ffd700, #ffaa00);
+        color: #4a2c00;
+    }
+
+    .r2 {
+        background: linear-gradient(135deg, #c0c0c0, #9e9e9e);
+        color: #2a2a2a;
+    }
+
+    .r3 {
+        background: linear-gradient(135deg, #cd7f32, #b5651d);
+        color: #2a1000;
+    }
+
+    .rx {
+        background: var(--bg3);
+        color: var(--t3);
+    }
+
+    /* Modal */
+    .mbg {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(6px);
+        z-index: 500;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .mbg.on {
+        display: flex;
+    }
+
+    .modal {
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: 18px;
+        padding: 24px;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: var(--shb);
+        animation: mi .22s ease;
+    }
+
+    @keyframes mi {
+        from {
+            opacity: 0;
+            scale: .96
+        }
+
+        to {
+            opacity: 1;
+            scale: 1
+        }
+    }
+
+    .mhdr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 19px;
+    }
+
+    .mtitle {
+        font-size: 15px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mtitle .ico {
+        width: 16px;
+        height: 16px;
+        color: var(--acc);
+    }
+
+    .mclose {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        color: var(--t2);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--tr);
+    }
+
+    .mclose:hover {
+        border-color: var(--red);
+        color: var(--red);
+    }
+
+    .mclose .ico {
+        width: 13px;
+        height: 13px;
+    }
+
+    .mfoot {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        margin-top: 19px;
+    }
+
+    /* Toast */
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--card);
+        border: 1px solid var(--bdr);
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--t1);
+        z-index: 900;
+        transform: translateX(120%);
+        opacity: 0;
+        transition: all .32s cubic-bezier(.4, 0, .2, 1);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        box-shadow: var(--shb);
+        min-width: 210px;
+    }
+
+    .toast.on {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .toast.success {
+        border-color: rgba(34, 197, 94, .3);
+    }
+
+    .toast.error {
+        border-color: rgba(239, 68, 68, .3);
+    }
+
+    .ticon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    .ticon.success {
+        color: var(--grn);
+    }
+
+    .ticon.error {
+        color: var(--red);
+    }
+
+    .ticon.info {
+        color: var(--acc);
+    }
+
+    /* Mobile */
+    .mobov {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 199;
+    }
+
+    .mobov.on {
+        display: block;
+    }
+
+    .mobhdr {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 58px;
+        background: var(--card);
+        border-bottom: 1px solid var(--bdr);
+        align-items: center;
+        padding: 0 14px;
+        gap: 11px;
+        z-index: 150;
+    }
+
+    .mobhdr-logo {
+        font-size: 13px;
+        font-weight: 800;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mobhdr-logo .ico {
+        width: 15px;
+        height: 15px;
+        color: var(--acc);
+    }
+
+    .mhbtn {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--bg3);
+        border: 1px solid var(--bdr);
+        color: var(--t2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .mhbtn .ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    @media(max-width:768px) {
+        .sidebar {
+            transform: translateX(-100%);
+        }
+
+        .sidebar.mopen {
+            transform: translateX(0);
+        }
+
+        .main {
+            margin-left: 0;
+            padding-top: 58px;
+        }
+
+        .mobhdr {
+            display: flex;
+        }
+
+        .topbar {
+            display: none;
+        }
+
+        .sr {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .content {
+            padding: 13px;
+        }
+
+        .appf {
+            margin: 0 13px 13px;
+        }
+
+        .appfinner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .ph {
+            flex-direction: column;
+        }
+
+        .frow {
+            flex-direction: column;
+        }
+
+        .fsrch,
+        .fsel {
+            width: 100%;
+        }
+
+        .crow {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media(min-width:769px) and (max-width:1024px) {
+        .lright {
+            width: 100%;
+            padding: 30px 22px;
+        }
+
+        .lform {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .sidebar {
+            width: 224px;
+        }
+
+        .main {
+            margin-left: 224px;
+        }
+
+        .topbar {
+            padding: 0 14px;
+        }
+
+        .tbl {
+            gap: 8px;
+        }
+
+        .tbtheme-btn {
+            width: 42px;
+            height: 42px;
+        }
+
+        .tbreg {
+            padding: 8px 10px;
+            font-size: 12px;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sr {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .egrid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ph {
+            gap: 10px;
+        }
+    }
+
+    @media(max-width:640px) {
+        .lright {
+            padding: 20px 14px;
+        }
+
+        .tabs {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .tab {
+            width: 100%;
+        }
+
+        .sr {
+            grid-template-columns: 1fr;
+        }
+
+        .egrid {
+            grid-template-columns: 1fr;
+        }
+
+        .mfoot {
+            flex-direction: column;
+        }
+
+        .mfoot .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .toast {
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            min-width: auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div id="loginPage">
+    <div class="lbg"></div>
+    <div class="lgrid"></div>
+    <div class="lleft">
+      <div class="lhero">
+        <div class="lbadge"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            </svg></span> Rasmiy platforma · O'zbekiston</div>
+        <h1>Sport <em>Akademiyasi</em><br>Platformasi</h1>
+        <p>O'zbekiston bo'yicha barcha mahallalardagi sport seleksiyasini boshqarish, kuzatish va tahlil qilish uchun yagona raqamli tizim.</p>
+        <div class="lstats">
+          <div><div class="lsn">14</div><div class="lsl">Viloyat</div></div>
+          <div><div class="lsn">200+</div><div class="lsl">Tuman</div></div>
+          <div><div class="lsn">10K+</div><div class="lsl">Mahallalar</div></div>
+          <div><div class="lsn">50K+</div><div class="lsl">Yoshlar</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="lright">
+      <div class="lform">
+        <div class="llogobox">
+          <div class="llogoicon"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+              </svg></span></div>
+          <h2>Tizimga kirish</h2>
+          <p id="loginHint">Telefon raqamni kiriting va Enter bosing</p>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+          <button class="tab" onclick="setRole(this,'admin')">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+              </svg></span> Admin</button>
+          <button class="tab on" data-role="trainer" onclick="setRole(this,'trainer')">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+              </svg></span> Seleksioner trener</button>
+        </div>
+
+        <!-- ADMIN GROUP -->
+        <div class="fg hidden" id="adminGroup">
+          <label class="fl">Admin login</label>
+          <div class="fiw">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg></span>
+            <input class="fi" id="adminLoginInp" type="text" placeholder="admin" autocomplete="username">
+          </div>
+          <label class="fl" style="margin-top:12px">Parol</label>
+          <div class="fiw">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+              </svg></span>
+            <input class="fi" id="adminPassInp" type="password" placeholder="Parolni kiriting" autocomplete="current-password">
+          </div>
+          <div style="margin-top:8px;font-size:11px;color:var(--t3);text-align:center;opacity:0.7">
+            Demo: <b>admin</b> / <b>admin123</b>
+          </div>
+        </div>
+
+        <!-- PHONE GROUP (Trainer) -->
+        <div class="fg" id="phoneGroup">
+          <label class="fl">Telefon raqam</label>
+          <div class="fiw">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+              </svg></span>
+            <input class="fi" id="phoneInp" type="tel" inputmode="numeric" maxlength="17" placeholder="+998 xx xxx xx xx">
+          </div>
+        </div>
+
+        <div class="fg hidden" id="passGroup">
+          <label class="fl" id="passLabel">Yangi kod</label>
+          <div class="fiw">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+              </svg></span>
+            <input class="fi" id="passInp" type="password" placeholder="xxxxx">
+          </div>
+        </div>
+
+        <div class="hidden" id="resetGroup">
+          <div class="fg"><label class="fl">Tasdiqlash kodi</label>
+            <div class="fiw"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.11v4.72c0 4.52-2.98 8.93-7 10.12-4.02-1.19-7-5.6-7-10.12V6.29l7-3.11zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z" />
+                </svg></span><input class="fi" id="resetCodeInp" type="text" inputmode="numeric" placeholder="SMS kodni kiriting"></div>
+          </div>
+          <div class="fg"><label class="fl">Yangi parol</label>
+            <div class="fiw"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17a2 2 0 0 0 2-2c0-.74-.4-1.38-1-1.72V11h-2v2.28A2 2 0 0 0 12 17zm6-6h-1V9a5 5 0 0 0-10 0v2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-3 0H9V9a3 3 0 0 1 6 0v2z" />
+                </svg></span><input class="fi" id="newPassInp" type="password" placeholder="Yangi parol o'rnating"></div>
+          </div>
+        </div>
+
+        <button class="bmain" id="authMainBtn" onclick="doLogin()">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" />
+            </svg></span> Davom etish</button>
+
+        <div class="div" id="otpDivider">yoki</div>
+        <button class="botp" id="otpBtn" onclick="doOTP()">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+            </svg></span> SMS orqali OTP bilan kirish</button>
+
+        <div class="forgot" id="forgotBtn" onclick="startPasswordReset()">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+            </svg></span> Parolni unutdingizmi?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="app">
+    <div class="mobhdr" id="mobhdr">
+      <button class="mhbtn" onclick="toggleSB()"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg></span></button>
+      <div class="mobhdr-logo"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+          </svg></span> Sport Seleksioner</div>
+    </div>
+    <div class="mobov" id="mobov" onclick="closeSB()"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="slogo">
+        <div class="slogoico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+            </svg></span></div>
+        <div>
+          <div class="slogot">Sport Akademiyasi</div>
+          <div class="slogos">O'zbekiston Respublikasi</div>
+        </div>
+      </div>
+      <div class="suser">
+        <div class="savt" id="suserAvt">RT</div>
+        <div>
+          <div class="suname" id="suserName">Raxmonaliyev Temur</div>
+          <div class="surole" id="suserRole"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="4" />
+              </svg></span> Seleksioner trener · Andijon</div>
+        </div>
+      </div>
+      <nav class="snav">
+        <div class="nsec">Asosiy</div>
+        <div class="ni on" onclick="go('dashboard',this)"><span class="ico"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg></span> Bosh sahifa</div>
+        <div class="ni" onclick="go('mahallalar',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg></span> Biriktirilgan mahallar<span class="nbadge" id="navMahallaCount">24</span></div>
+        <div class="nsec">Aholi</div>
+        <div class="ni" onclick="go('yoshlar',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+            </svg></span> Yosh guruhlari</div>
+        <div class="ni" onclick="go('jismoniy',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
+            </svg></span> Jismoniy tayyorgarlik</div>
+        <div class="nsec">Faoliyat</div>
+        <div class="ni" onclick="go('tadbirlar',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+            </svg></span> Tadbirlar va media<span class="nbadge">8</span></div>
+        <div class="ni" onclick="go('seleksiya',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            </svg></span> Sport maktabiga seleksiya</div>
+        <div class="nsec">Tahlil</div>
+        <div class="ni" onclick="go('reyting',this)"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+            </svg></span> Umumiy reyting</div>
+      </nav>
+      <div class="sfooter">
+        <button class="blog" onclick="doLogout()"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+            </svg></span> Tizimdan chiqish</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="tbl">
+          <div class="tbreg"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg></span> Andijon viloyati</div>
+          <span style="font-size:12px;color:var(--t3)" id="bcPage">Bosh sahifa</span>
+        </div>
+        <div class="tbmid">
+          <span class="tbclock" id="tbClock">--:--</span>
+        </div>
+        <div class="tbr">
+          <div class="tbtheme-group" role="group" aria-label="Mavzu tanlash">
+            <button class="tbtheme-btn" type="button" data-theme="light" title="Light" onclick="setThemeMode('light')">
+              <span class="tbtheme-dot"></span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.76 4.84 5.34 3.42 3.93 4.83l1.41 1.41 1.42-1.4zM1 13h3v-2H1v2zm10-9h2V1h-2v3zm7.66.83-1.41-1.41-1.42 1.41 1.42 1.41 1.41-1.41zM17 13h3v-2h-3v2zm-5 8h2v-3h-2v3zm5.24-1.84 1.42 1.42 1.41-1.41-1.41-1.42-1.42 1.41zM4.93 19.17l1.41 1.41 1.42-1.42-1.41-1.41-1.42 1.42zM12 6a6 6 0 100 12 6 6 0 000-12z" />
+                </svg></span>
+            </button>
+            <button class="tbtheme-btn" type="button" data-theme="gradient" title="3-rang"
+              onclick="setThemeMode('gradient')">
+              <span class="tbtheme-dot"></span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.66 6.34C16.79 5.48 15.62 5 14.41 5c-1.21 0-2.38.48-3.24 1.34L6 11.51l6.49 6.49 5.17-5.17c1.79-1.79 1.79-4.7 0-6.49zM5.29 12.22a4.58 4.58 0 0 0 0 6.49A4.58 4.58 0 0 0 8.54 20c1.23 0 2.39-.48 3.26-1.35l.7-.7-6.49-6.49-.72.76z" />
+                </svg></span>
+            </button>
+            <button class="tbtheme-btn" type="button" data-theme="dark" title="Night" onclick="setThemeMode('dark')">
+              <span class="tbtheme-dot"></span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21 12.79A9 9 0 1111.21 3c0 .16-.01.32-.01.49 0 4.97 4.03 9 9 9 .27 0 .53-.01.8-.04z" />
+                </svg></span>
+            </button>
+          </div>
+          <div class="tbbtn" title="Bildirishnomalar" onclick="openNotifications()"><span class="ico"><svg
+                viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+              </svg></span></div>
+          <div class="tbbtn" title="Sozlamalar" onclick="openSettings()"><span class="ico"><svg viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+              </svg></span></div>
+          <div class="tbbtn" title="Yordam" onclick="toast('Yordam bo\'limi tez kunda!','info')"><span class="ico"><svg
+                viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+              </svg></span></div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- DASHBOARD -->
+        <div class="page on" id="page-dashboard">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg></span> Bosh sahifa</div>
+              <div class="phsub">Andijon viloyati · 2026-yil umumiy ko'rsatkichlari</div>
+            </div>
+            <div class="phact"><button class="btn btns"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-3-7H8v-2h7v2zm0 4H8v-2h7v2z" />
+                  </svg></span> Hisobot</button></div>
+          </div>
+          <div class="sr">
+            <div class="sc sBlue">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg></span></div><span class="bdg bBlue scb">+2 yangi</span>
+              </div>
+              <div class="scval" id="dashMahallaCount">24</div>
+              <div class="sclbl">Biriktirilgan mahallalar</div>
+            </div>
+            <div class="sc sGreen">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    </svg></span></div><span class="bdg bGreen scb">&#8593; 8%</span>
+              </div>
+              <div class="scval" id="dashAholiCount">15,579</div>
+              <div class="sclbl">Jami aholisi</div>
+            </div>
+            <div class="sc sOrange">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                    </svg></span></div><span class="bdg bOrange scb">Bu oy 28</span>
+              </div>
+              <div class="scval" id="dashSeleksiyaCount">342</div>
+              <div class="sclbl">Seleksiya qilinganlar</div>
+            </div>
+            <div class="sc sPurple">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                    </svg></span></div><span class="bdg bPurple scb">Faol</span>
+              </div>
+              <div class="scval" id="dashFaolCount">8</div>
+              <div class="sclbl">Faol tadbirlar</div>
+            </div>
+          </div>
+          <div class="crow">
+            <div class="ccard">
+              <div class="ctitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 9.2h3V19H5V9.2zm5.6-4.2h2.8v14h-2.8V5zm5.6 8h2.8v6H16.2V13z" />
+                  </svg></span> Yosh guruhlari bo'yicha aholi</div>
+              <div class="barchart" id="ageChart"></div>
+            </div>
+            <div class="ccard">
+              <div class="ctitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 9.2h3V19H5V9.2zm5.6-4.2h2.8v14h-2.8V5zm5.6 8h2.8v6H16.2V13z" />
+                  </svg></span> Sport turlari bo'yicha seleksiya</div>
+              <div class="barchart" id="sportChart"></div>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                  </svg></span> So'nggi faoliyatlar</div>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ism Familiya</th>
+                    <th>Mahalla</th>
+                    <th>Sport turi</th>
+                    <th>Holat</th>
+                    <th>Sana</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Karimov Jasur</b></td>
+                    <td>Yoshlik</td>
+                    <td>Futbol</td>
+                    <td><span class="bdg bGreen"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                          </svg></span> Seleksiya</span></td>
+                    <td><span style="font-family:var(--mono);font-size:11px;color:var(--t3)">19.02.2026</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Yusupova Nilufar</b></td>
+                    <td>Ovulmat</td>
+                    <td>Gimnastika</td>
+                    <td><span class="bdg bBlue"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                          </svg></span> Ro'yxatdan o'tdi</span></td>
+                    <td><span style="font-family:var(--mono);font-size:11px;color:var(--t3)">18.02.2026</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Xolmatov Sherzod</b></td>
+                    <td>To'rtol</td>
+                    <td>Kurash</td>
+                    <td><span class="bdg bOrange"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+                          </svg></span> Test kutilmoqda</span></td>
+                    <td><span style="font-family:var(--mono);font-size:11px;color:var(--t3)">17.02.2026</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Rahimova Zulfiya</b></td>
+                    <td>Fazogir</td>
+                    <td>Voleybol</td>
+                    <td><span class="bdg bGreen"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                          </svg></span> Seleksiya</span></td>
+                    <td><span style="font-family:var(--mono);font-size:11px;color:var(--t3)">17.02.2026</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Toshmatov Bekzod</b></td>
+                    <td>Oqtom</td>
+                    <td>Boks</td>
+                    <td><span class="bdg bGray"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              d="M2 13h2v-2H2v2zm0 4h2v-2H2v2zm0-8h2V7H2v2zm4 4h16v-2H6v2zm0 4h16v-2H6v2zM6 7v2h16V7H6z" />
+                          </svg></span> Baholandi</span></td>
+                    <td><span style="font-family:var(--mono);font-size:11px;color:var(--t3)">16.02.2026</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAHALLALAR -->
+        <div class="page" id="page-mahallalar">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg></span> Biriktirilgan mahallar</div>
+              <div class="phsub">Andijon viloyati · barcha tumanlar</div>
+            </div>
+            <div class="phact">
+              <button class="btn btng" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-5.5-4.5L14 13l-1.5 2.5L11 13H9.5l2.25 3.5L9.5 20H11l1.5-2.5 1.5 2.5h1.5l-2.25-3.5 2.25-3.5H14z" />
+                  </svg></span> Excel</button>
+              <button class="btn btnr" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM11.5 9.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z" />
+                  </svg></span> PDF</button>
+            </div>
+          </div>
+          <div class="sr">
+            <div class="sc sBlue">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 19H3v-2h4v-8H6l3.5-7 2.5 5 2.5-5L18 11h-1v8h4v2z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="mhAge7Count">2,312</div>
+              <div class="sclbl">7–14 yosh</div>
+            </div>
+            <div class="sc sGreen">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="mhAge16Count">3,129</div>
+              <div class="sclbl">16–30 yosh</div>
+            </div>
+            <div class="sc sOrange">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="mhAge31Count">5,167</div>
+              <div class="sclbl">31–55 yosh</div>
+            </div>
+            <div class="sc sRed">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm6 9h-4l-2-4-2 4H6l2 9h2v-4h4v4h2l2-9z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="mhAge56Count">4,971</div>
+              <div class="sclbl">56–70+ yosh</div>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <div class="fsrch"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg></span><input type="text" id="mhS" placeholder="Mahalla nomi bo'yicha qidirish..."
+                  oninput="filterMH()"></div>
+              <select class="fsel" id="mhT" onchange="filterMH()">
+                <option value="">Barcha tumanlar</option>
+                <optgroup label="Andijon viloyati"><option value="Andijon tumani">Andijon tumani</option><option value="Asaka tumani">Asaka tumani</option><option value="Baliqchi tumani">Baliqchi tumani</option><option value="Xo'jaobod tumani">Xo'jaobod tumani</option></optgroup>
+                <optgroup label="Farg'ona viloyati"><option value="Farg'ona tumani">Farg'ona tumani</option><option value="Marg'ilon tumani">Marg'ilon tumani</option><option value="Qo'qon tumani">Qo'qon tumani</option><option value="Rishton tumani">Rishton tumani</option></optgroup>
+                <optgroup label="Namangan viloyati"><option value="Namangan tumani">Namangan tumani</option><option value="Chortoq tumani">Chortoq tumani</option><option value="Pop tumani">Pop tumani</option><option value="Uychi tumani">Uychi tumani</option></optgroup>
+                <optgroup label="Toshkent viloyati"><option value="Chirchiq tumani">Chirchiq tumani</option><option value="Olmaliq tumani">Olmaliq tumani</option><option value="Angren tumani">Angren tumani</option><option value="Bekobod tumani">Bekobod tumani</option></optgroup>
+                <optgroup label="Samarqand viloyati"><option value="Samarqand tumani">Samarqand tumani</option><option value="Kattaqo'rg'on tumani">Kattaqo'rg'on tumani</option><option value="Urgut tumani">Urgut tumani</option><option value="Payariq tumani">Payariq tumani</option></optgroup>
+                <optgroup label="Buxoro viloyati"><option value="Buxoro tumani">Buxoro tumani</option><option value="G'ijduvon tumani">G'ijduvon tumani</option><option value="Kogon tumani">Kogon tumani</option><option value="Romitan tumani">Romitan tumani</option></optgroup>
+                <optgroup label="Navoiy viloyati"><option value="Navoiy tumani">Navoiy tumani</option><option value="Zarafshon tumani">Zarafshon tumani</option><option value="Uchquduq tumani">Uchquduq tumani</option><option value="Karmana tumani">Karmana tumani</option></optgroup>
+                <optgroup label="Qashqadaryo viloyati"><option value="Qarshi tumani">Qarshi tumani</option><option value="Shahrisabz tumani">Shahrisabz tumani</option><option value="Kitob tumani">Kitob tumani</option><option value="Muborak tumani">Muborak tumani</option></optgroup>
+                <optgroup label="Surxondaryo viloyati"><option value="Termiz tumani">Termiz tumani</option><option value="Denov tumani">Denov tumani</option><option value="Sariosiyo tumani">Sariosiyo tumani</option><option value="Boysun tumani">Boysun tumani</option></optgroup>
+                <optgroup label="Jizzax viloyati"><option value="Jizzax tumani">Jizzax tumani</option><option value="Sharof Rashidov tumani">Sharof Rashidov tumani</option><option value="Zomin tumani">Zomin tumani</option><option value="G'allaorol tumani">G'allaorol tumani</option></optgroup>
+                <optgroup label="Sirdaryo viloyati"><option value="Guliston tumani">Guliston tumani</option><option value="Yangiyer tumani">Yangiyer tumani</option><option value="Shirin tumani">Shirin tumani</option><option value="Boyovut tumani">Boyovut tumani</option></optgroup>
+                <optgroup label="Xorazm viloyati"><option value="Urganch tumani">Urganch tumani</option><option value="Xiva tumani">Xiva tumani</option><option value="Gurlan tumani">Gurlan tumani</option><option value="Shovot tumani">Shovot tumani</option></optgroup>
+                <optgroup label="Qoraqalpog'iston Respublikasi"><option value="Nukus tumani">Nukus tumani</option><option value="Turtkul tumani">Turtkul tumani</option><option value="Xo'jayli tumani">Xo'jayli tumani</option><option value="Beruniy tumani">Beruniy tumani</option></optgroup>
+                <optgroup label="Toshkent shahri"><option value="Yunusobod tumani">Yunusobod tumani</option><option value="Chilonzor tumani">Chilonzor tumani</option><option value="Mirzo Ulug'bek tumani">Mirzo Ulug'bek tumani</option><option value="Sergeli tumani">Sergeli tumani</option></optgroup>
+              </select>
+              <button class="btn btns" onclick="resetF('mh')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+                  </svg></span> Mahallalar ro'yxati</div><span class="bdg bBlue" id="mhCount">12 ta</span>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mahalla</th>
+                    <th>Tuman</th>
+                    <th>7–14 yosh</th>
+                    <th>16–30 yosh</th>
+                    <th>31–55 yosh</th>
+                    <th>56–70+ yosh</th>
+                    <th>Jami</th>
+                  </tr>
+                </thead>
+                <tbody id="mhBody"></tbody>
+              </table>
+            </div>
+            <div class="pgn">
+              <div class="pgi" id="mhInfo"></div>
+              <div class="pgb" id="mhPg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- YOSHLAR -->
+        <div class="page" id="page-yoshlar">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                  </svg></span> Yosh guruhlari</div>
+              <div class="phsub">Besh tashabbus olimpiadasi · Ro'yxat</div>
+            </div>
+            <div class="phact">
+              <button class="btn btnp" onclick="openM('addUser')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                  </svg></span> Ro'yxatga olish</button>
+              <button class="btn btng" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-5.5-4.5L14 13l-1.5 2.5L11 13H9.5l2.25 3.5L9.5 20H11l1.5-2.5 1.5 2.5h1.5l-2.25-3.5 2.25-3.5H14z" />
+                  </svg></span> Export</button>
+            </div>
+          </div>
+          <div class="sr">
+            <div class="sc sBlue">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="yStatA7">—</div>
+              <div class="sclbl">Maktab o'quvchilari (7–14)</div>
+            </div>
+            <div class="sc sGreen">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="yStatA16">—</div>
+              <div class="sclbl">Mahalla yoshlari (16–30)</div>
+            </div>
+            <div class="sc sOrange">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="yStatA31">—</div>
+              <div class="sclbl">Maktab hodimi (31–55)</div>
+            </div>
+            <div class="sc sPurple">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M2 13h2v-2H2v2zm0 4h2v-2H2v2zm0-8h2V7H2v2zm4 4h16v-2H6v2zm0 4h16v-2H6v2zM6 7v2h16V7H6z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="yStatSel">—</div>
+              <div class="sclbl">Seleksiyaga yuborilganlar</div>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <div class="fsrch"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg></span><input type="text" id="yS" placeholder="Ism bo'yicha qidirish..." oninput="filterY()">
+              </div>
+              <select class="fsel" id="yY" onchange="filterY()">
+                <option value="">Barcha yoshlar</option>
+                <option>7-14</option>
+                <option>16-30</option>
+                <option>31-55</option>
+                <option>56-70+</option>
+              </select>
+              <select class="fsel" id="yM" onchange="filterY()">
+                <option value="">Barcha mahallalar</option>
+                <option>Yoshlik</option>
+                <option>Ovulmat</option>
+                <option>To'rtol</option>
+                <option>Fazogir</option>
+                <option>Oqtom</option>
+              </select>
+              <select class="fsel" id="ySp" onchange="filterY()">
+                <option value="">Barcha sportlar</option>
+                <option>Futbol</option>
+                <option>Kurash</option>
+                <option>Boks</option>
+                <option>Gimnastika</option>
+                <option>Voleybol</option>
+              </select>
+              <select class="fsel" id="yH" onchange="filterY()">
+                <option value="">Barcha holatlar</option>
+                <option>Seleksiya</option>
+                <option>Ro'yxatdan o'tdi</option>
+                <option>Test kutilmoqda</option>
+                <option>Baholandi</option>
+              </select>
+              <button class="btn btns" onclick="resetF('y')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2 13h2v-2H2v2zm0 4h2v-2H2v2zm0-8h2V7H2v2zm4 4h16v-2H6v2zm0 4h16v-2H6v2zM6 7v2h16V7H6z" />
+                  </svg></span> Foydalanuvchilar</div><span class="bdg bBlue" id="yCount"></span>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Ism Familiya</th>
+                    <th>Yosh guruhi</th>
+                    <th>Mahalla</th>
+                    <th>Sport</th>
+                    <th>Ball</th>
+                    <th>Holat</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="yBody"></tbody>
+              </table>
+            </div>
+            <div class="pgn">
+              <div class="pgi" id="yInfo"></div>
+              <div class="pgb" id="yPg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JISMONIY -->
+        <div class="page" id="page-jismoniy">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
+                  </svg></span> Jismoniy tayyorgarlik</div>
+              <div class="phsub">Baholash natijalari va statistika</div>
+            </div>
+            <div class="phact">
+              <button class="btn btnp" onclick="openM('addTest')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></span> Baholash qo'shish</button>
+              <button class="btn btng" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-3-7H8v-2h7v2zm0 4H8v-2h7v2z" />
+                  </svg></span> Export</button>
+            </div>
+          </div>
+          <div class="sr">
+            <div class="sc sGreen">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval">287</div>
+              <div class="sclbl">Baholangan</div>
+            </div>
+            <div class="sc sOrange">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval">55</div>
+              <div class="sclbl">Baholanmagan</div>
+            </div>
+            <div class="sc sBlue">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval">84%</div>
+              <div class="sclbl">O'rtacha natija</div>
+            </div>
+            <div class="sc sPurple">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-14L8.5 7H4l3.46 2.51L6.18 14 10 11.24 13.82 14l-1.28-4.49L16 7h-4.5L12 0z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval">48</div>
+              <div class="sclbl">A'lo natija</div>
+            </div>
+          </div>
+          <div class="crow">
+            <div class="ccard">
+              <div class="ctitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 9.2h3V19H5V9.2zm5.6-4.2h2.8v14h-2.8V5zm5.6 8h2.8v6H16.2V13z" />
+                  </svg></span> Yosh guruhlari natijasi</div>
+              <div id="physChart" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <div class="ccard">
+              <div class="ctitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg></span> Sport turlari bo'yicha</div>
+              <div id="sportPhysChart" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <div class="fsrch"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg></span><input type="text" id="jS" placeholder="Qidirish..." oninput="filterJ()"></div>
+              <select class="fsel" id="jY" onchange="filterJ()">
+                <option value="">Barcha yoshlar</option>
+                <option>7-14</option>
+                <option>16-30</option>
+                <option>31-55</option>
+              </select>
+              <select class="fsel" id="jSp" onchange="filterJ()">
+                <option value="">Barcha sportlar</option>
+                <option>Futbol</option>
+                <option>Kurash</option>
+                <option>Boks</option>
+                <option>Gimnastika</option>
+                <option>Voleybol</option>
+              </select>
+              <select class="fsel" id="jD" onchange="filterJ()">
+                <option value="">Barcha darajalar</option>
+                <option>A'lo</option>
+                <option>Yaxshi</option>
+                <option>Qoniqarli</option>
+              </select>
+              <button class="btn btns" onclick="resetF('j')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+                  </svg></span> Baholash natijalari</div><span class="bdg bBlue" id="jCount"></span>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ism Familiya</th>
+                    <th>Yosh</th>
+                    <th>Sport</th>
+                    <th>Yugurish</th>
+                    <th>Sakrash</th>
+                    <th>Kuch</th>
+                    <th>Umumiy</th>
+                    <th>Daraja</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="jBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TADBIRLAR -->
+        <div class="page" id="page-tadbirlar">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                  </svg></span> Tadbirlar va media</div>
+              <div class="phsub">Musobaqalar, uchrashuvlar va galereya</div>
+            </div>
+            <div class="phact">
+              <button class="btn btnp" onclick="openM('addEvent')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></span> Tadbir qo'shish</button>
+              <button class="btn btng" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-3-7H8v-2h7v2zm0 4H8v-2h7v2z" />
+                  </svg></span> Export</button>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <div class="fsrch"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg></span><input type="text" id="tS" placeholder="Tadbir nomi..." oninput="filterT()"></div>
+              <select class="fsel" id="tH" onchange="filterT()">
+                <option value="">Barcha holatlar</option>
+                <option>Faol</option>
+                <option>Rejalashtirilgan</option>
+                <option>Yakunlandi</option>
+              </select>
+              <select class="fsel" id="tSp" onchange="filterT()">
+                <option value="">Barcha sportlar</option>
+                <option>Futbol</option>
+                <option>Kurash</option>
+                <option>Voleybol</option>
+                <option>Gimnastika</option>
+                <option>Boks</option>
+              </select>
+              <button class="btn btns" onclick="resetF('t')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="egrid" id="eventGrid"></div>
+        </div>
+
+        <!-- SELEKSIYA -->
+        <div class="page" id="page-seleksiya">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                  </svg></span> Sport maktabiga seleksiya</div>
+              <div class="phsub">Tavsiya va seleksiya natijalari</div>
+            </div>
+            <div class="phact">
+              <button class="btn btnp" onclick="openM('addSel')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></span> Seleksiya qo'shish</button>
+              <button class="btn btns" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                  </svg></span> Yuqoriga yuborish</button>
+            </div>
+          </div>
+          <div class="sr">
+            <div class="sc sGreen">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="sStatTotal">—</div>
+              <div class="sclbl">Seleksiya qilinganlar</div>
+            </div>
+            <div class="sc sBlue">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="sStatMaktab">—</div>
+              <div class="sclbl">Sport maktablari</div>
+            </div>
+            <div class="sc sOrange">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M7.5 11C9.43 11 11 9.43 11 7.5S9.43 4 7.5 4 4 5.57 4 7.5 5.57 11 7.5 11zm0-5C8.33 6 9 6.67 9 7.5S8.33 9 7.5 9 6 8.33 6 7.5 6.67 6 7.5 6zm9 7c-1.93 0-3.5 1.57-3.5 3.5S14.57 18 16.5 18s3.5-1.57 3.5-3.5S18.43 13 16.5 13zm0 5c-.83 0-1.5-.67-1.5-1.5S15.67 15 16.5 15s1.5.67 1.5 1.5S17.33 18 16.5 18zM6 20h2.5l9-15H15L6 20z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="sStatQabul">—</div>
+              <div class="sclbl">Qabul darajasi</div>
+            </div>
+            <div class="sc sPurple">
+              <div class="sct">
+                <div class="scico"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                    </svg></span></div>
+              </div>
+              <div class="scval" id="sStatBuOy">—</div>
+              <div class="sclbl">Bu oyda</div>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <div class="fsrch"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg></span><input type="text" id="sS" placeholder="Ism bo'yicha qidirish..." oninput="filterS()">
+              </div>
+              <select class="fsel" id="sSp" onchange="filterS()">
+                <option value="">Barcha sportlar</option>
+                <option>Futbol</option>
+                <option>Kurash</option>
+                <option>Boks</option>
+                <option>Gimnastika</option>
+                <option>Voleybol</option>
+              </select>
+              <select class="fsel" id="sH" onchange="filterS()">
+                <option value="">Barcha holatlar</option>
+                <option>Tasdiqlangan</option>
+                <option>Ko'rib chiqilmoqda</option>
+                <option>Rad etilgan</option>
+              </select>
+              <button class="btn btns" onclick="resetF('s')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2 13h2v-2H2v2zm0 4h2v-2H2v2zm0-8h2V7H2v2zm4 4h16v-2H6v2zm0 4h16v-2H6v2zM6 7v2h16V7H6z" />
+                  </svg></span> Seleksiya ro'yxati</div><span class="bdg bBlue" id="sCount"></span>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Ism Familiya</th>
+                    <th>Yosh</th>
+                    <th>Mahalla</th>
+                    <th>Sport maktabi</th>
+                    <th>Sport</th>
+                    <th>Ball</th>
+                    <th>Holat</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="sBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- REYTING -->
+        <div class="page" id="page-reyting">
+          <div class="ph">
+            <div>
+              <div class="phtitle"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                  </svg></span> Umumiy reyting</div>
+              <div class="phsub">Mahalla, tuman va viloyat kesimida</div>
+            </div>
+            <div class="phact">
+              <button class="btn btng" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-5.5-4.5L14 13l-1.5 2.5L11 13H9.5l2.25 3.5L9.5 20H11l1.5-2.5 1.5 2.5h1.5l-2.25-3.5 2.25-3.5H14z" />
+                  </svg></span> Excel</button>
+              <button class="btn btnr" onclick="exportData()"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM11.5 9.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z" />
+                  </svg></span> PDF</button>
+            </div>
+          </div>
+          <div class="fbar">
+            <div class="frow">
+              <select class="fsel" id="rT" onchange="filterR()">
+                <option value="">Mahalla reytingi</option>
+                <option>Tuman reytingi</option>
+                <option>Viloyat reytingi</option>
+              </select>
+              <select class="fsel" id="rSp" onchange="filterR()">
+                <option value="">Barcha sportlar</option>
+                <option value="Futbol">Futbol</option>
+                <option value="Kurash">Kurash</option>
+                <option value="Boks">Boks</option>
+                <option value="Gimnastika">Gimnastika</option>
+                <option value="Voleybol">Voleybol</option>
+                <option value="Basketbol">Basketbol</option>
+                <option value="Suzish">Suzish</option>
+                <option value="Atletika">Atletika</option>
+                <option value="Karate">Karate</option>
+                <option value="Judo">Judo</option>
+              </select>
+              <select class="fsel" id="rY" onchange="filterR()">
+                <option>2026-yil</option>
+                <option>2025-yil</option>
+              </select>
+              <button class="btn btns" onclick="resetF('r')"><span class="ico"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
+                  </svg></span> Tozalash</button>
+            </div>
+          </div>
+          <div class="tc">
+            <div class="thead">
+              <div class="theadt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg></span> <span id="rTitle">Mahallalar reytingi</span></div>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th>O'rin</th>
+                    <th id="rHeadCol">Mahalla</th>
+                    <th id="rHeadHudud">Hudud</th>
+                    <th>Olimpiada</th>
+                    <th>Jismoniy</th>
+                    <th>Seleksiya</th>
+                    <th>Topshiriqlar</th>
+                    <th>Jami ball</th>
+                    <th>Progress</th>
+                  </tr>
+                </thead>
+                <tbody id="rBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /content -->
+      <footer class="appf">
+        <div class="appfinner">
+          <div class="appfbrand">Sport Seleksioner · 2026</div>
+          <div class="appfsocial">
+            <a class="slink" href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm8.5 1.8h-8.5A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8zm5.2-2.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+                </svg></span>
+            </a>
+            <a class="slink" href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9.04 15.58 8.7 20.3c.49 0 .7-.21.95-.46l2.28-2.18 4.72 3.45c.87.48 1.48.23 1.72-.8l3.12-14.6h0c.28-1.3-.47-1.82-1.31-1.5L1.88 11.2c-1.25.49-1.23 1.19-.21 1.5l4.69 1.46 10.89-6.86c.51-.34.98-.15.59.19" />
+                </svg></span>
+            </a>
+            <a class="slink" href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3v2.1H8V14h2.2v8h3.3z" />
+                </svg></span>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div><!-- /main -->
+  </div><!-- /app -->
+
+  <!-- MODAL -->
+  <div class="mbg" id="mbg" onclick="bgC(event)">
+    <div class="modal" id="mContent"></div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toastEl">
+    <span class="ticon" id="tIcon"></span>
+    <span id="tMsg"></span>
+  </div>
+
+  <script>
+// ======== RESPUBLIKA STRUKTURASI ========
+const REGIONS = [
+  { viloyat: "Andijon viloyati", tumanlar: [
+    { tuman: "Andijon tumani", maktab: "Andijon DYOSSH", mahallalar: ["Yoshlik", "Navro'z", "Bahor"] },
+    { tuman: "Asaka tumani", maktab: "Asaka DYOSSH", mahallalar: ["To'rtol", "Olmazor", "Mustaqillik"] },
+    { tuman: "Baliqchi tumani", maktab: "Baliqchi DYOSSH", mahallalar: ["Oqtom", "Sarbon", "Paxtakor"] },
+    { tuman: "Xo'jaobod tumani", maktab: "Xo'jaobod DYOSSH", mahallalar: ["Guliston", "Yangi hayot", "Farovon"] }
+  ]},
+  { viloyat: "Farg'ona viloyati", tumanlar: [
+    { tuman: "Farg'ona tumani", maktab: "Farg'ona DYOSSH", mahallalar: ["Nuri hayot", "Bog'ishamol", "Tinchlik"] },
+    { tuman: "Marg'ilon tumani", maktab: "Marg'ilon DYOSSH", mahallalar: ["Ipakchi", "Dehqonobod", "Ravnaq"] },
+    { tuman: "Qo'qon tumani", maktab: "Qo'qon DYOSSH", mahallalar: ["Shahrisabz", "Ulug'bek", "Mehr"] },
+    { tuman: "Rishton tumani", maktab: "Rishton DYOSSH", mahallalar: ["Sopol", "Chinor", "Ziyod"] }
+  ]},
+  { viloyat: "Namangan viloyati", tumanlar: [
+    { tuman: "Namangan tumani", maktab: "Namangan DYOSSH", mahallalar: ["Ko'ktepa", "Xurmo", "Istiqbol"] },
+    { tuman: "Chortoq tumani", maktab: "Chortoq DYOSSH", mahallalar: ["Arslonbob", "Tog'li", "Suv osti"] },
+    { tuman: "Pop tumani", maktab: "Pop DYOSSH", mahallalar: ["Qorabog'", "Yangiyo'l", "Sariq tosh"] },
+    { tuman: "Uychi tumani", maktab: "Uychi DYOSSH", mahallalar: ["Qo'ng'irot", "Bog'dod", "Furqat"] }
+  ]},
+  { viloyat: "Toshkent viloyati", tumanlar: [
+    { tuman: "Chirchiq tumani", maktab: "Chirchiq DYOSSH", mahallalar: ["Ko'kcha", "Yangi shahar", "Vodiy"] },
+    { tuman: "Olmaliq tumani", maktab: "Olmaliq DYOSSH", mahallalar: ["Mis kombinati", "Tog' etagi", "Eron"] },
+    { tuman: "Angren tumani", maktab: "Angren DYOSSH", mahallalar: ["Qo'rg'on", "Shahar", "Yangi turmush"] },
+    { tuman: "Bekobod tumani", maktab: "Bekobod DYOSSH", mahallalar: ["Po'lat", "Sirdaryo bo'yi", "Navbahor"] }
+  ]},
+  { viloyat: "Samarqand viloyati", tumanlar: [
+    { tuman: "Samarqand tumani", maktab: "Samarqand DYOSSH", mahallalar: ["Registon", "Siyob", "Ko'kdala"] },
+    { tuman: "Kattaqo'rg'on tumani", maktab: "Kattaqo'rg'on DYOSSH", mahallalar: ["Bog'cha", "Oqdaryo", "Ziyorat"] },
+    { tuman: "Urgut tumani", maktab: "Urgut DYOSSH", mahallalar: ["Temir yo'l", "Yuqori mahalla", "Chinor"] },
+    { tuman: "Payariq tumani", maktab: "Payariq DYOSSH", mahallalar: ["Paxtazor", "Qo'ltepa", "Yangi qishloq"] }
+  ]},
+  { viloyat: "Buxoro viloyati", tumanlar: [
+    { tuman: "Buxoro tumani", maktab: "Buxoro DYOSSH", mahallalar: ["Ark", "Labi hovuz", "Devonbegi"] },
+    { tuman: "G'ijduvon tumani", maktab: "G'ijduvon DYOSSH", mahallalar: ["Sho'rtepa", "Ravot", "Qo'rg'oncha"] },
+    { tuman: "Kogon tumani", maktab: "Kogon DYOSSH", mahallalar: ["Temir yo'l", "Markaziy", "Yangi mahalla"] },
+    { tuman: "Romitan tumani", maktab: "Romitan DYOSSH", mahallalar: ["Eski shahar", "Qorovul", "Bog'iston"] }
+  ]},
+  { viloyat: "Navoiy viloyati", tumanlar: [
+    { tuman: "Navoiy tumani", maktab: "Navoiy DYOSSH", mahallalar: ["Kimyogar", "Metallurg", "Navro'z"] },
+    { tuman: "Zarafshon tumani", maktab: "Zarafshon DYOSSH", mahallalar: ["Oltin vodiy", "Qumli", "Baxt"] },
+    { tuman: "Uchquduq tumani", maktab: "Uchquduq DYOSSH", mahallalar: ["Cho'l", "Quduq boshi", "Shoh"] },
+    { tuman: "Karmana tumani", maktab: "Karmana DYOSSH", mahallalar: ["Qadimiy", "Yangi", "Nishon"] }
+  ]},
+  { viloyat: "Qashqadaryo viloyati", tumanlar: [
+    { tuman: "Qarshi tumani", maktab: "Qarshi DYOSSH", mahallalar: ["Nasaf", "Qashqa", "Sardoba"] },
+    { tuman: "Shahrisabz tumani", maktab: "Shahrisabz DYOSSH", mahallalar: ["Oq saroy", "Ko'hna", "Bog'i buzruk"] },
+    { tuman: "Kitob tumani", maktab: "Kitob DYOSSH", mahallalar: ["Qo'rg'on", "Eski bozor", "Chinobod"] },
+    { tuman: "Muborak tumani", maktab: "Muborak DYOSSH", mahallalar: ["Gaz", "Yangi hayot", "Dehqon"] }
+  ]},
+  { viloyat: "Surxondaryo viloyati", tumanlar: [
+    { tuman: "Termiz tumani", maktab: "Termiz DYOSSH", mahallalar: ["Amudaryo", "Baqtriya", "Janubiy"] },
+    { tuman: "Denov tumani", maktab: "Denov DYOSSH", mahallalar: ["Ko'histon", "Zarang", "Obi hayot"] },
+    { tuman: "Sariosiyo tumani", maktab: "Sariosiyo DYOSSH", mahallalar: ["Tog'oldi", "Markaziy", "Qorabog'"] },
+    { tuman: "Boysun tumani", maktab: "Boysun DYOSSH", mahallalar: ["Qal'a", "Soyi", "Toshloq"] }
+  ]},
+  { viloyat: "Jizzax viloyati", tumanlar: [
+    { tuman: "Jizzax tumani", maktab: "Jizzax DYOSSH", mahallalar: ["Fotimaobod", "Yangiobod", "Lolazor"] },
+    { tuman: "Sharof Rashidov tumani", maktab: "Sh.Rashidov DYOSSH", mahallalar: ["Paxtakor", "Sariq", "G'alla"] },
+    { tuman: "Zomin tumani", maktab: "Zomin DYOSSH", mahallalar: ["Tog'li", "Vodiy", "Terak"] },
+    { tuman: "G'allaorol tumani", maktab: "G'allaorol DYOSSH", mahallalar: ["Don", "Yashil", "Markaziy"] }
+  ]},
+  { viloyat: "Sirdaryo viloyati", tumanlar: [
+    { tuman: "Guliston tumani", maktab: "Guliston DYOSSH", mahallalar: ["Gul", "Chaman", "Navruz"] },
+    { tuman: "Yangiyer tumani", maktab: "Yangiyer DYOSSH", mahallalar: ["Yangi", "Ko'k", "Sarv"] },
+    { tuman: "Shirin tumani", maktab: "Shirin DYOSSH", mahallalar: ["Tatlar", "Yosh", "Saodat"] },
+    { tuman: "Boyovut tumani", maktab: "Boyovut DYOSSH", mahallalar: ["Qo'ng'irot", "Intizom", "Mehnat"] }
+  ]},
+  { viloyat: "Xorazm viloyati", tumanlar: [
+    { tuman: "Urganch tumani", maktab: "Urganch DYOSSH", mahallalar: ["Xiva yo'li", "Bog'ot", "Al-Xorazmiy"] },
+    { tuman: "Xiva tumani", maktab: "Xiva DYOSSH", mahallalar: ["Ichan qal'a", "Toshhovuz", "Palvon"] },
+    { tuman: "Gurlan tumani", maktab: "Gurlan DYOSSH", mahallalar: ["Sariqamish", "Ko'hna Urganch", "Yangiobod"] },
+    { tuman: "Shovot tumani", maktab: "Shovot DYOSSH", mahallalar: ["Suv yo'li", "Yangi qishloq", "Bog'dod"] }
+  ]},
+  { viloyat: "Qoraqalpog'iston Respublikasi", tumanlar: [
+    { tuman: "Nukus tumani", maktab: "Nukus DYOSSH", mahallalar: ["Amudaryo", "Qo'ng'irot", "Muynoq"] },
+    { tuman: "Turtkul tumani", maktab: "Turtkul DYOSSH", mahallalar: ["Qadimiy", "Yangi", "Daryo bo'yi"] },
+    { tuman: "Xo'jayli tumani", maktab: "Xo'jayli DYOSSH", mahallalar: ["Ko'l", "Cho'l", "Vodiy"] },
+    { tuman: "Beruniy tumani", maktab: "Beruniy DYOSSH", mahallalar: ["Sharq", "Markaziy", "G'arb"] }
+  ]},
+  { viloyat: "Toshkent shahri", tumanlar: [
+    { tuman: "Yunusobod tumani", maktab: "Yunusobod DYOSSH", mahallalar: ["Chilonzor ko'chasi", "Osiyo", "Yangi Yunusobod"] },
+    { tuman: "Chilonzor tumani", maktab: "Chilonzor DYOSSH", mahallalar: ["9-massiv", "16-massiv", "Bog'ishamol"] },
+    { tuman: "Mirzo Ulug'bek tumani", maktab: "M.Ulug'bek DYOSSH", mahallalar: ["Akademgorodok", "Ko'kcha", "Yangi"] },
+    { tuman: "Sergeli tumani", maktab: "Sergeli DYOSSH", mahallalar: ["Janubiy", "Markaziy Sergeli", "Osiyo"] }
+  ]}
+];
+
+// ======== ISMLAR VA FAMILIYALAR ========
+const ERKAK_ISMLAR = ["Jasur","Sherzod","Bekzod","Firdavs","Ulugbek","Sarvar","Bobur","Jahongir","Dilshod","Mirzo","Otabek","Sanjar","Behruz","Abdulloh","Temur","Ravshan","Nodir","Kamol","Zafar","Ilhom","Alisher","Doniyor","Mansur","Rustam","Timur"];
+const QIZLAR_ISMLAR = ["Nilufar","Zulfiya","Barno","Kamola","Dilnoza","Malika","Nargiza","Feruza","Mohira","Shahnoza","Hulkar","Maftuna","Sarvinoz","Dildora","Aziza","Nafisa","Oydin","Gulsanam","Nasiba","Munira"];
+const FAMILIYALAR = ["Karimov","Rahimov","Xolmatov","Toshmatov","Ergashev","Yusupov","Mirzayev","Qodirov","Holiqov","Sultonov","Nazarov","Pulatov","Xasanov","Abdullayev","Normatov","Umarov","Ismoilov","Xudoyberdiyev","Mamadaliyev","Tursunov","Raxmatullayev","Haydarov","Qosimov","Jurayev","Sobirov"];
+const SPORTLAR = ["Futbol","Kurash","Boks","Gimnastika","Voleybol","Basketbol","Suzish","Atletika","Karate","Judo"];
+const YOSH_GURUHLAR = ["7-14","16-30","31-55","56-70+"];
+const HOLATLAR = ["Seleksiya","Ro'yxatdan o'tdi","Test kutilmoqda","Baholandi"];
+const SEL_HOLATLAR = ["Tasdiqlangan","Ko'rib chiqilmoqda","Rad etilgan"];
+const DARAJALAR = ["A'lo","Yaxshi","Qoniqarli"];
+
+function rnd(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
+function pick(arr) { return arr[rnd(0, arr.length - 1)]; }
+function fullName() {
+  const erkak = Math.random() > 0.4;
+  const ism = erkak ? pick(ERKAK_ISMLAR) : pick(QIZLAR_ISMLAR);
+  return pick(FAMILIYALAR) + " " + ism;
+}
+
+// ======== DB GENERATSIYA ========
+function generateDB() {
+  const y = [], j = [], s = [], r = [];
+  const mhMap = new Map();
+  let yId = 1, sId = 1;
+
+  REGIONS.forEach(region => {
+    region.tumanlar.forEach(tuman => {
+      tuman.mahallalar.forEach(mahalla => {
+        const mhKey = `${region.viloyat}|${tuman.tuman}|${mahalla}`;
+        if (!mhMap.has(mhKey)) {
+          mhMap.set(mhKey, {
+            n: mahalla,
+            t: tuman.tuman,
+            v: region.viloyat,
+            a7: 0,
+            a16: 0,
+            a31: 0,
+            a56: 0
+          });
+        }
+
+        // HAR MAHALLADA 5 SPORTCHI
+        for (let i = 0; i < 5; i++) {
+          const nom = fullName();
+          const sport = pick(SPORTLAR);
+          const yosh_gr = pick(YOSH_GURUHLAR);
+          const ball = rnd(65, 99);
+          const holat = pick(HOLATLAR);
+          const yosh_son = yosh_gr === "7-14" ? rnd(7,14) : yosh_gr === "16-30" ? rnd(16,30) : yosh_gr === "31-55" ? rnd(31,55) : rnd(56,70);
+          const daraja = ball >= 90 ? "A'lo" : ball >= 75 ? "Yaxshi" : "Qoniqarli";
+
+          // YOSHLAR
+          y.push({ id: yId++, name: nom, yosh: yosh_gr, mahalla, tuman: tuman.tuman, viloyat: region.viloyat, sport, ball, holat });
+
+          const mhRec = mhMap.get(mhKey);
+          if (yosh_gr === '7-14') mhRec.a7 += 1;
+          else if (yosh_gr === '16-30') mhRec.a16 += 1;
+          else if (yosh_gr === '31-55') mhRec.a31 += 1;
+          else mhRec.a56 += 1;
+
+          // JISMONIY
+          j.push({
+            name: nom, yosh: yosh_son, yg: yosh_gr, sport,
+            tuman: tuman.tuman, viloyat: region.viloyat,
+            yug: (rnd(38, 55) / 10).toFixed(1),
+            sak: (rnd(12, 25) / 10).toFixed(1),
+            kuch: rnd(60, 98),
+            total: ball, daraja
+          });
+
+          // SELEKSIYA (ball yuqori bo'lganlar)
+          if (ball >= 80) {
+            s.push({
+              id: sId++, name: nom, yosh: yosh_son,
+              mahalla, tuman: tuman.tuman, viloyat: region.viloyat,
+              maktab: tuman.maktab, sport, ball,
+              holat: pick(SEL_HOLATLAR)
+            });
+          }
+        }
+
+        // REYTING
+        r.push({
+          mahalla, tuman: tuman.tuman, viloyat: region.viloyat,
+          olimpiada: rnd(150, 280),
+          jismoniy: rnd(120, 220),
+          seleksiya: rnd(50, 100),
+          topshiriq: rnd(60, 110),
+          get total() { return this.olimpiada + this.jismoniy + this.seleksiya + this.topshiriq; }
+        });
+      });
+    });
+  });
+
+  const mh = Array.from(mhMap.values());
+  r.sort((a, b) => b.total - a.total);
+  return { mh, y, j, s, r };
+}
+
+const DB = generateDB();
+
+// ======== AUTH ========
+const AUTH_STORAGE_KEY = 'sportAuthCodes';
+const RESET_STORAGE_KEY = 'sportResetCodes';
+const THEME_STORAGE_KEY = 'sportThemeMode';
+const THEME_MODES = ['dark', 'light', 'gradient'];
+const PHONE_PREFIX = '+998 ';
+let authStep = 'phone';
+let activePhone = '';
+let currentLoginMode = 'trainer'; // 'trainer' yoki 'admin'
+let currentUserRole = null; // login bo'lgandan keyin: 'admin' yoki 'trainer'
+
+// ======== ROL ASOSIDAGI MA'LUMOTLAR ========
+// Admin: barcha viloyatlar, tumanlar, mahallalarni ko'radi
+// Trainer: faqat o'ziga biriktirilgan mahallalarni ko'radi
+
+const TRAINER_REGION = {
+  viloyat: 'Andijon viloyati',
+  tuman: 'Andijon tumani',
+  mahallalar: ['Yoshlik', "Navro'z", 'Bahor']
+};
+
+// Trainer uchun filtrlangan DB
+function getTrainerDB() {
+  const mh = DB.mh.filter(m =>
+    m.v === TRAINER_REGION.viloyat &&
+    m.t === TRAINER_REGION.tuman &&
+    TRAINER_REGION.mahallalar.includes(m.n)
+  );
+  const mahallaSet = new Set(mh.map(m => m.n));
+  const y = DB.y.filter(u => mahallaSet.has(u.mahalla));
+  const j = DB.j.filter(u => mahallaSet.has(u.mahalla));
+  const s = DB.s.filter(u => mahallaSet.has(u.mahalla));
+  const r = DB.r.filter(u => mahallaSet.has(u.mahalla));
+  return { mh, y, j, s, r };
+}
+
+function setRole(el, mode = 'trainer') {
+  currentLoginMode = mode === 'admin' ? 'admin' : 'trainer';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  el.classList.add('on');
+
+  const phoneGroup = document.getElementById('phoneGroup');
+  const passGroup = document.getElementById('passGroup');
+  const resetGroup = document.getElementById('resetGroup');
+  const otpBtn = document.getElementById('otpBtn');
+  const otpDivider = document.getElementById('otpDivider');
+  const forgotBtn = document.getElementById('forgotBtn');
+  const loginHint = document.getElementById('loginHint');
+  const adminGroup = document.getElementById('adminGroup');
+
+  if (adminGroup) adminGroup.classList.add('hidden');
+  if (passGroup) passGroup.classList.add('hidden');
+  if (resetGroup) resetGroup.classList.add('hidden');
+
+  if (currentLoginMode === 'admin') {
+    if (adminGroup) adminGroup.classList.remove('hidden');
+    if (phoneGroup) phoneGroup.classList.add('hidden');
+    if (otpBtn) otpBtn.classList.add('hidden');
+    if (otpDivider) otpDivider.classList.add('hidden');
+    if (forgotBtn) forgotBtn.classList.add('hidden');
+    if (loginHint) loginHint.textContent = 'Admin login va parolni kiriting';
+    authStep = 'admin';
+    return;
+  }
+
+  if (phoneGroup) phoneGroup.classList.remove('hidden');
+  if (otpBtn) otpBtn.classList.remove('hidden');
+  if (otpDivider) otpDivider.classList.remove('hidden');
+  if (forgotBtn) forgotBtn.classList.remove('hidden');
+  if (loginHint) loginHint.textContent = "Telefon raqamni kiriting va Enter bosing";
+  setAuthStep('phone');
+}
+function normalizePhone(phone) {
+  const digits = String(phone || '').replace(/\D/g, '');
+  if (digits.startsWith('998')) return digits.slice(3, 12);
+  return digits.slice(0, 9);
+}
+function isValidPhoneLocal(local) {
+  return /^\d{9}$/.test(local);
+}
+function formatPhoneValue(localDigits) {
+  const d = String(localDigits || '').replace(/\D/g, '').slice(0, 9);
+  const p1 = d.slice(0, 2);
+  const p2 = d.slice(2, 5);
+  const p3 = d.slice(5, 7);
+  const p4 = d.slice(7, 9);
+  return [p1, p2, p3, p4].filter(Boolean).join(' ');
+}
+function getAuthCodeByPhone(authCodes, localPhone) {
+  if (!authCodes) return '';
+  return authCodes[localPhone] || authCodes[`998${localPhone}`] || '';
+}
+function readAuthCodes() {
+  try {
+    return JSON.parse(localStorage.getItem(AUTH_STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+function saveAuthCodes(codes) {
+  localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(codes));
+}
+// Admin credentials (demo)
+const ADMIN_CREDENTIALS = { login: 'admin', password: 'admin123' };
+function readResetCodes() {
+  try {
+    return JSON.parse(localStorage.getItem(RESET_STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+function saveResetCodes(codes) {
+  localStorage.setItem(RESET_STORAGE_KEY, JSON.stringify(codes));
+}
+function clearExpiredResetCodes() {
+  const codes = readResetCodes();
+  const now = Date.now();
+  let changed = false;
+  Object.keys(codes).forEach(phone => {
+    if (!codes[phone] || !codes[phone].expiresAt || codes[phone].expiresAt < now) {
+      delete codes[phone];
+      changed = true;
+    }
+  });
+  if (changed) saveResetCodes(codes);
+}
+function setAuthStep(step) {
+  authStep = step;
+  const passGroup = document.getElementById('passGroup');
+  const resetGroup = document.getElementById('resetGroup');
+  const passLabel = document.getElementById('passLabel');
+  const passInp = document.getElementById('passInp');
+  const resetCodeInp = document.getElementById('resetCodeInp');
+  const newPassInp = document.getElementById('newPassInp');
+  const mainBtn = document.getElementById('authMainBtn');
+  const loginHint = document.getElementById('loginHint');
+  passInp.value = '';
+  if (resetCodeInp) resetCodeInp.value = '';
+  if (newPassInp) newPassInp.value = '';
+  if (step === 'phone') {
+    activePhone = '';
+    passGroup.classList.add('hidden');
+    if (resetGroup) resetGroup.classList.add('hidden');
+    mainBtn.innerHTML = '<span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg></span> Davom etish';
+    loginHint.textContent = 'Telefon raqamni kiriting va Enter bosing';
+    return;
+  }
+  if (step === 'reset') {
+    passGroup.classList.add('hidden');
+    if (resetGroup) resetGroup.classList.remove('hidden');
+    if (resetCodeInp) resetCodeInp.focus();
+    mainBtn.innerHTML = '<span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.11v4.72c0 4.52-2.98 8.93-7 10.12-4.02-1.19-7-5.6-7-10.12V6.29l7-3.11zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z"/></svg></span> Parolni yangilash';
+    loginHint.textContent = "SMS kodni kiriting va yangi parol o'rnating";
+    return;
+  }
+  if (resetGroup) resetGroup.classList.add('hidden');
+  passGroup.classList.remove('hidden');
+  passInp.focus();
+  passInp.placeholder = 'xxxxx';
+  if (step === 'create') {
+    passLabel.textContent = 'Yangi kod';
+    mainBtn.innerHTML = '<span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg></span> Yangi kodni saqlash';
+    loginHint.textContent = 'Yangi kodni kiriting';
+  } else {
+    passLabel.textContent = 'Eski kod';
+    mainBtn.innerHTML = '<span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg></span> Kirish';
+    loginHint.textContent = 'Eski kodni kiriting';
+  }
+}
+function completeLogin() {
+  document.getElementById('loginPage').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  applyRoleUI();
+  initAll();
+  toast('Muvaffaqiyatli kirdingiz!', 'success');
+}
+
+function applyRoleUI() {
+  const isAdmin = currentUserRole === 'admin';
+  // Sidebar user info
+  const sunameEl = document.getElementById('suserName');
+  const suroleEl = document.getElementById('suserRole');
+  const savtEl = document.getElementById('suserAvt');
+  const regionEl = document.querySelector('.tbreg');
+
+  if (isAdmin) {
+    if (sunameEl) sunameEl.textContent = 'Administrator';
+    if (suroleEl) suroleEl.textContent = 'Admin · Barcha viloyatlar';
+    if (savtEl) savtEl.textContent = 'AD';
+    if (regionEl) regionEl.innerHTML = "<span class='ico'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z'/></svg></span> O'zbekiston Respublikasi";
+
+    // Admin sees all data - reset to full DB
+    mhF = DB.mh;
+    yF = DB.y;
+    jF = DB.j;
+    sF = DB.s;
+    rF = sortByTotalDesc(DB.r);
+  } else {
+    currentUserRole = 'trainer';
+    const tDB = getTrainerDB();
+    if (sunameEl) sunameEl.textContent = 'Raxmonaliyev Temur';
+    if (suroleEl) suroleEl.textContent = 'Seleksioner trener · Andijon';
+    if (savtEl) savtEl.textContent = 'RT';
+    if (regionEl) regionEl.innerHTML = '<span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span> Andijon viloyati';
+
+    // Trainer sees only their assigned mahallalar
+    mhF = tDB.mh;
+    yF = tDB.y;
+    jF = tDB.j;
+    sF = tDB.s;
+    rF = sortByTotalDesc(tDB.r);
+  }
+}
+function continueWithPhone() {
+  const phone = document.getElementById('phoneInp').value.trim();
+  const localPhone = normalizePhone(phone);
+  if (!isValidPhoneLocal(localPhone)) {
+    toast('Telefon raqam 9 ta raqam bo\'lishi shart', 'error');
+    return;
+  }
+  activePhone = localPhone;
+  const authCodes = readAuthCodes();
+  setAuthStep(getAuthCodeByPhone(authCodes, localPhone) ? 'verify' : 'create');
+}
+function startPasswordReset() {
+  toast('SMS orqali parol tiklash vaqtincha o\'chirildi', 'info');
+}
+function doLogin() {
+  if (currentLoginMode === 'admin') {
+    const loginVal = (document.getElementById('adminLoginInp') ? document.getElementById('adminLoginInp').value : '').trim();
+    const passVal = (document.getElementById('adminPassInp') ? document.getElementById('adminPassInp').value : '').trim();
+    if (!loginVal || !passVal) {
+      toast('Login va parolni kiriting', 'error');
+      return;
+    }
+    if (loginVal === ADMIN_CREDENTIALS.login && passVal === ADMIN_CREDENTIALS.password) {
+      currentUserRole = 'admin';
+      completeLogin();
+      return;
+    }
+    toast("Login yoki parol noto'g'ri", 'error');
+    return;
+  }
+  if (authStep === 'phone') {
+    continueWithPhone();
+    return;
+  }
+  const phone = document.getElementById('phoneInp').value.trim();
+  const code = document.getElementById('passInp').value.trim();
+  const localPhone = normalizePhone(phone);
+  if (!isValidPhoneLocal(localPhone) || localPhone !== activePhone) {
+    setAuthStep('phone');
+    toast("Telefon raqam o'zgardi. Qayta davom eting", 'error');
+    return;
+  }
+  if (!code || code.length < 4) {
+    toast('Kamida 4 belgili kod kiriting', 'error');
+    return;
+  }
+  const authCodes = readAuthCodes();
+  if (authStep === 'create') {
+    authCodes[localPhone] = code;
+    saveAuthCodes(authCodes);
+    currentUserRole = 'trainer';
+    completeLogin();
+    return;
+  }
+  if (getAuthCodeByPhone(authCodes, localPhone) !== code) {
+    toast("Kod noto'g'ri. To'g'ri kodni kiriting", 'error');
+    return;
+  }
+  currentUserRole = 'trainer';
+  completeLogin();
+}
+
+function doOTP() {
+  toast('SMS orqali kirish vaqtincha o\'chirildi', 'info');
+}
+function openNotifications() {
+  const todaySelections = DB.s.filter(x => x.holat === 'Tasdiqlangan').length;
+  toast(`Yangi bildirishnomalar: ${todaySelections} ta`, 'info');
+}
+function openSettings() {
+  openM('settings');
+  setTimeout(() => {
+    const select = document.getElementById('settingsThemeSel');
+    if (!select) return;
+    const mode = document.body.classList.contains('gradient-theme')
+      ? 'gradient'
+      : document.body.classList.contains('light-theme')
+        ? 'light'
+        : 'dark';
+    select.value = mode;
+  }, 0);
+}
+function saveSettingsFromModal() {
+  const select = document.getElementById('settingsThemeSel');
+  if (select && THEME_MODES.includes(select.value)) {
+    localStorage.setItem(THEME_STORAGE_KEY, select.value);
+    applyTheme(select.value);
+  }
+  closeM();
+  toast("Sozlamalar saqlandi", 'success');
+}
+function updateHeaderClock() {
+  const el = document.getElementById('tbClock');
+  if (!el) return;
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  el.textContent = `${h}:${m}`;
+}
+// doLogout yangi versiyasi yuqorida
+
+// ======== THEME ========
+function applyTheme(mode) {
+  const safeMode = THEME_MODES.includes(mode) ? mode : 'dark';
+  document.body.classList.toggle('light-theme', safeMode === 'light');
+  document.body.classList.toggle('gradient-theme', safeMode === 'gradient');
+  document.querySelectorAll('.tbtheme-btn').forEach(btn => {
+    btn.classList.toggle('on', btn.getAttribute('data-theme') === safeMode);
+  });
+}
+function setThemeMode(mode) {
+  const safeMode = THEME_MODES.includes(mode) ? mode : 'dark';
+  localStorage.setItem(THEME_STORAGE_KEY, safeMode);
+  applyTheme(safeMode);
+}
+function initTheme() {
+  const savedMode = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
+  applyTheme(savedMode);
+}
+
+function formatCount(value) {
+  return value.toLocaleString('en-US');
+}
+
+function renderDashboardStats() {
+  const source = mhF && mhF.length ? mhF : DB.mh;
+  const mahallaCount = source.length;
+  const aholiCount = source.reduce((sum, m) => sum + m.a7 + m.a16 + m.a31 + m.a56, 0);
+  const keys = new Set(source.map(m => `${m.v}|${m.t}|${m.n}`));
+  const seleksiyaCount = DB.s.filter(s => keys.has(`${s.viloyat}|${s.tuman}|${s.mahalla}`)).length;
+  const faolCount = tData.filter(t => t.holat === 'Faol').length;
+
+  const mahallaEl = document.getElementById('dashMahallaCount');
+  const aholiEl = document.getElementById('dashAholiCount');
+  const seleksiyaEl = document.getElementById('dashSeleksiyaCount');
+  const faolEl = document.getElementById('dashFaolCount');
+
+  if (mahallaEl) mahallaEl.textContent = formatCount(mahallaCount);
+  if (aholiEl) aholiEl.textContent = formatCount(aholiCount);
+  if (seleksiyaEl) seleksiyaEl.textContent = formatCount(seleksiyaCount);
+  if (faolEl) faolEl.textContent = formatCount(faolCount);
+
+  const navBadgeEl = document.getElementById('navMahallaCount');
+  if (navBadgeEl) navBadgeEl.textContent = formatCount(mahallaCount);
+}
+
+// ======== NAV ========
+const pgN = { dashboard: 'Bosh sahifa', mahallalar: 'Biriktirilgan mahallar', yoshlar: 'Yosh guruhlari', jismoniy: 'Jismoniy tayyorgarlik', tadbirlar: 'Tadbirlar va media', seleksiya: 'Seleksiya', reyting: 'Umumiy reyting' };
+function go(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.ni').forEach(n => n.classList.remove('on'));
+  const pg_el = document.getElementById('page-' + id);
+  if (pg_el) pg_el.classList.add('on');
+  if (el) el.classList.add('on');
+  const bcEl = document.getElementById('bcPage');
+  if (bcEl) bcEl.textContent = pgN[id] || id;
+  closeSB();
+  // Sahifaga o'tganda renderlarni yangilash
+  if (id === 'dashboard')   { renderDashboardStats(); renderCharts(); }
+  if (id === 'mahallalar')  { renderMH(); }
+  if (id === 'yoshlar')     { renderY(); updateYoshlarStats(); }
+  if (id === 'jismoniy')    { renderJ(); }
+  if (id === 'tadbirlar')   { renderT(); }
+  if (id === 'seleksiya')   { renderS(); updateSeleksiyaStats(); }
+  if (id === 'reyting')     { renderR(); }
+}
+function toggleSB() { document.getElementById('sidebar').classList.toggle('mopen'); document.getElementById('mobov').classList.toggle('on'); }
+function closeSB() { document.getElementById('sidebar').classList.remove('mopen'); document.getElementById('mobov').classList.remove('on'); }
+
+// ======== PAGINATE ========
+function pg(data, page, pp) { const s = (page - 1) * pp; return { items: data.slice(s, s + pp), total: data.length }; }
+function buildPg(cid, iid, total, page, pp, fn) {
+  const pages = Math.ceil(total / pp), s = (page - 1) * pp;
+  if (iid) {
+    const infoEl = document.getElementById(iid);
+    if (infoEl) {
+      if (total === 0) infoEl.textContent = `0 dan 0 ta`;
+      else infoEl.textContent = `${s + 1}–${Math.min(page * pp, total)} dan ${total} ta`;
+    }
+  }
+  if (!cid) return;
+  const pgEl = document.getElementById(cid);
+  if (!pgEl) return;
+  let h = '';
+  if (page > 1) h += `<button class="pgbtn" onclick="${fn}(${page - 1})"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>`;
+  for (let i = 1; i <= pages; i++) {
+    if (pages > 6 && i > 2 && i < pages - 1 && Math.abs(i - page) > 1) { if (i === 3 || i === pages - 2) h += `<button class="pgbtn" disabled>…</button>`; continue; }
+    h += `<button class="pgbtn ${i === page ? 'on' : ''}" onclick="${fn}(${i})">${i}</button>`;
+  }
+  if (page < pages) h += `<button class="pgbtn" onclick="${fn}(${page + 1})"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>`;
+  pgEl.innerHTML = h;
+}
+
+// ======== MAHALLA ========
+let mhF = DB.mh, mhP = 1;
+function filterMH() {
+  mhP = 1;
+  const q = document.getElementById('mhS').value.toLowerCase();
+  const t = document.getElementById('mhT').value;
+  mhF = DB.mh.filter(m => m.n.toLowerCase().includes(q) && (!t || m.t === t || m.v === t));
+  renderMH();
+}
+function renderMH() {
+  const { items, total } = pg(mhF, mhP, 10);
+  document.getElementById('mhCount').textContent = total + ' ta';
+  const age7Total = mhF.reduce((sum, m) => sum + m.a7, 0);
+  const age16Total = mhF.reduce((sum, m) => sum + m.a16, 0);
+  const age31Total = mhF.reduce((sum, m) => sum + m.a31, 0);
+  const age56Total = mhF.reduce((sum, m) => sum + m.a56, 0);
+  const age7El = document.getElementById('mhAge7Count');
+  const age16El = document.getElementById('mhAge16Count');
+  const age31El = document.getElementById('mhAge31Count');
+  const age56El = document.getElementById('mhAge56Count');
+  if (age7El) age7El.textContent = formatCount(age7Total);
+  if (age16El) age16El.textContent = formatCount(age16Total);
+  if (age31El) age31El.textContent = formatCount(age31Total);
+  if (age56El) age56El.textContent = formatCount(age56Total);
+  document.getElementById('mhBody').innerHTML = items.map(m => `
+    <tr>
+      <td><b>${m.n}</b></td>
+      <td><span class="bdg bGray">${m.t}</span></td>
+      <td><span class="atag a7">${m.a7}</span></td>
+      <td><span class="atag a16">${m.a16}</span></td>
+      <td><span class="atag a31">${m.a31}</span></td>
+      <td><span class="atag a56">${m.a56}</span></td>
+      <td><b>${m.a7 + m.a16 + m.a31 + m.a56}</b></td>
+    </tr>`).join('');
+  buildPg('mhPg', 'mhInfo', total, mhP, 10, 'goMH');
+  renderDashboardStats();
+  renderCharts();
+}
+function goMH(p) { mhP = p; renderMH(); }
+
+// ======== YOSHLAR ========
+let yF = DB.y, yP = 1;
+const yBdg = { 'Seleksiya': 'bGreen', "Ro'yxatdan o'tdi": 'bBlue', 'Test kutilmoqda': 'bOrange', 'Baholandi': 'bGray' };
+const yAC = { '7-14': 'a7', '16-30': 'a16', '31-55': 'a31', '56-70+': 'a56' };
+function filterY() {
+  yP = 1;
+  const q = document.getElementById('yS').value.toLowerCase();
+  const y = document.getElementById('yY').value;
+  const m = document.getElementById('yM').value;
+  const sp = document.getElementById('ySp').value;
+  const h = document.getElementById('yH').value;
+  yF = DB.y.filter(u =>
+    u.name.toLowerCase().includes(q) &&
+    (!y || u.yosh === y) &&
+    (!m || u.mahalla === m || u.tuman === m || u.viloyat === m) &&
+    (!sp || u.sport === sp) &&
+    (!h || u.holat === h)
+  );
+  renderY();
+}
+function renderY() {
+  const { items, total } = pg(yF, yP, 10);
+  document.getElementById('yCount').textContent = total + ' ta';
+  document.getElementById('yBody').innerHTML = items.map(u => `
+    <tr>
+      <td style="color:var(--t3);font-family:var(--mono);font-size:11px">${u.id}</td>
+      <td><b>${u.name}</b></td>
+      <td><span class="atag ${yAC[u.yosh] || 'a7'}">${u.yosh}</span></td>
+      <td>${u.mahalla}</td>
+      <td>${u.sport}</td>
+      <td><b style="font-family:var(--mono);color:var(--accl)">${u.ball}</b></td>
+      <td><span class="bdg ${yBdg[u.holat] || 'bGray'}">${u.holat}</span></td>
+      <td><button class="btn btns" style="padding:4px 10px;font-size:11px" onclick="openUserDetail(${u.id})">Ko\'rish</button></td>
+    </tr>`).join('');
+  buildPg('yPg', 'yInfo', total, yP, 10, 'goY');
+}
+function updateYoshlarStats() {
+  const src = yF && yF.length ? yF : DB.y;
+  const a7   = src.filter(u => u.yosh === '7-14').length;
+  const a16  = src.filter(u => u.yosh === '16-30').length;
+  const a31  = src.filter(u => u.yosh === '31-55').length;
+  const sel  = src.filter(u => u.holat === 'Seleksiya').length;
+  const e1 = document.getElementById('yStatA7');   if (e1) e1.textContent = formatCount(a7);
+  const e2 = document.getElementById('yStatA16');  if (e2) e2.textContent = formatCount(a16);
+  const e3 = document.getElementById('yStatA31');  if (e3) e3.textContent = formatCount(a31);
+  const e4 = document.getElementById('yStatSel');  if (e4) e4.textContent = formatCount(sel);
+}
+function goY(p) { yP = p; renderY(); }
+
+// ======== JISMONIY ========
+let jF = DB.j, jP = 1;
+const jDC = { "A'lo": 'bGreen', 'Yaxshi': 'bBlue', 'Qoniqarli': 'bOrange' };
+function filterJ() {
+  jP = 1;
+  const q = document.getElementById('jS').value.toLowerCase();
+  const y = document.getElementById('jY').value;
+  const sp = document.getElementById('jSp').value;
+  const d = document.getElementById('jD').value;
+  jF = DB.j.filter(j =>
+    j.name.toLowerCase().includes(q) &&
+    (!y || j.yg === y) &&
+    (!sp || j.sport === sp) &&
+    (!d || j.daraja === d)
+  );
+  renderJ();
+}
+function renderJ() {
+  const { items, total } = pg(jF, jP, 10);
+  document.getElementById('jCount').textContent = total + ' ta';
+  document.getElementById('jBody').innerHTML = items.map(j => `
+    <tr>
+      <td><b>${j.name}</b></td>
+      <td>${j.yosh}</td>
+      <td>${j.sport}</td>
+      <td style="font-family:var(--mono)">${j.yug}s</td>
+      <td style="font-family:var(--mono)">${j.sak}m</td>
+      <td>
+        <div class="prw">
+          <div class="prbar"><div class="prfill" style="width:${j.kuch}%"></div></div>
+          <span class="prpct">${j.kuch}%</span>
+        </div>
+      </td>
+      <td><b style="font-size:15px">${j.total}</b></td>
+      <td><span class="bdg ${jDC[j.daraja] || 'bGray'}">${j.daraja}</span></td>
+      <td><button class="btn btns" style="padding:4px 10px;font-size:11px" onclick="openUserDetailByName('${j.name}')">Ko\'rish</button></td>
+    </tr>`).join('');
+  buildPg('jPg', 'jInfo', total, jP, 10, 'goJ');
+
+  const aD = [
+    { l: '7–14 yosh', v: Math.round(DB.j.filter(x=>x.yg==='7-14').reduce((s,x)=>s+x.total,0)/Math.max(DB.j.filter(x=>x.yg==='7-14').length,1)), c: 'var(--acc)' },
+    { l: '16–30 yosh', v: Math.round(DB.j.filter(x=>x.yg==='16-30').reduce((s,x)=>s+x.total,0)/Math.max(DB.j.filter(x=>x.yg==='16-30').length,1)), c: 'var(--grn)' },
+    { l: '31–55 yosh', v: Math.round(DB.j.filter(x=>x.yg==='31-55').reduce((s,x)=>s+x.total,0)/Math.max(DB.j.filter(x=>x.yg==='31-55').length,1)), c: 'var(--org)' },
+    { l: '56–70+ yosh', v: Math.round(DB.j.filter(x=>x.yg==='56-70+').reduce((s,x)=>s+x.total,0)/Math.max(DB.j.filter(x=>x.yg==='56-70+').length,1)), c: 'var(--red)' }
+  ];
+  document.getElementById('physChart').innerHTML = aD.map(a => `
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:12px">
+        <span style="color:var(--t2)">${a.l}</span><b style="font-family:var(--mono)">${a.v}%</b>
+      </div>
+      <div class="prbar" style="height:7px"><div class="prfill" style="width:${a.v}%;background:${a.c}"></div></div>
+    </div>`).join('');
+
+  const sportList = [...new Set(DB.j.map(x=>x.sport))];
+  const sD = sportList.map(sp => ({
+    l: sp,
+    v: Math.round(DB.j.filter(x=>x.sport===sp).reduce((s,x)=>s+x.total,0)/Math.max(DB.j.filter(x=>x.sport===sp).length,1))
+  })).sort((a,b)=>b.v-a.v).slice(0,5);
+  document.getElementById('sportPhysChart').innerHTML = sD.map(s => `
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:12px">
+        <span style="color:var(--t2)">${s.l}</span><b style="font-family:var(--mono)">${s.v}%</b>
+      </div>
+      <div class="prbar" style="height:7px"><div class="prfill" style="width:${s.v}%"></div></div>
+    </div>`).join('');
+}
+function goJ(p) { jP = p; renderJ(); }
+
+// ======== TADBIRLAR ========
+const tData = [
+  { id: 1, name: "Respublika Olimpiadasi 2026", date: "25 Fevral 2026", sport: "Futbol, Kurash", nfar: 840, holat: "Faol", color: "#4f6ef7" },
+  { id: 2, name: "Jismoniy tayyorgarlik testi", date: "20 Fevral 2026", sport: "Barcha sportlar", nfar: 620, holat: "Faol", color: "#22c55e" },
+  { id: 3, name: "Yoshlar chempionati", date: "15 Mart 2026", sport: "Kurash", nfar: 0, holat: "Rejalashtirilgan", color: "#f97316" },
+  { id: 4, name: "Seleksioner ko'riki", date: "10 Mart 2026", sport: "Futbol", nfar: 0, holat: "Rejalashtirilgan", color: "#a855f7" },
+  { id: 5, name: "Voleybol musobaqasi", date: "28 Fevral 2026", sport: "Voleybol", nfar: 310, holat: "Faol", color: "#ef4444" },
+  { id: 6, name: "Gimnastika ko'rgazmasi", date: "5 Mart 2026", sport: "Gimnastika", nfar: 180, holat: "Yakunlandi", color: "#06b6d4" },
+  { id: 7, name: "Boks chempionati", date: "20 Mart 2026", sport: "Boks", nfar: 0, holat: "Rejalashtirilgan", color: "#f59e0b" },
+  { id: 8, name: "Karate turniri", date: "1 Mart 2026", sport: "Karate", nfar: 95, holat: "Faol", color: "#10b981" },
+];
+let tF = [...tData];
+function filterT() {
+  const q = document.getElementById('tS').value.toLowerCase();
+  const h = document.getElementById('tH').value;
+  const sp = document.getElementById('tSp').value;
+  tF = tData.filter(x =>
+    x.name.toLowerCase().includes(q) &&
+    (!h || x.holat === h) &&
+    (!sp || x.sport.includes(sp))
+  );
+  renderT();
+}
+function renderT() {
+  const hBdg = { 'Faol': 'bGreen', 'Rejalashtirilgan': 'bOrange', 'Yakunlandi': 'bGray' };
+  const grid = document.getElementById('eventGrid');
+  if (!grid) return;
+  grid.innerHTML = tF.map(t => `
+    <article class="ecard" onclick="toast('Tadbir tafsilotlari','info')">
+      <div class="eico" style="background:${t.color}20;color:${t.color}">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></span>
+      </div>
+      <div class="ename">${t.name}</div>
+      <div class="emeta"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V9h14v10z"/></svg></span>${t.date}</div>
+      <div class="emeta"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2z"/></svg></span>${t.sport}</div>
+      <div class="efoot">
+        <div class="ecnt"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>${t.nfar > 0 ? `${t.nfar} ishtirokchi` : "Yangi ro'yxat"}</div>
+        <span class="bdg ${hBdg[t.holat] || 'bGray'}">${t.holat}</span>
+      </div>
+    </article>`).join('');
+}
+
+// ======== SELEKSIYA ========
+let sF = DB.s, sP = 1;
+function filterS() {
+  sP = 1;
+  const q = document.getElementById('sS').value.toLowerCase();
+  const sp = document.getElementById('sSp').value;
+  const h = document.getElementById('sH').value;
+  sF = DB.s.filter(x =>
+    x.name.toLowerCase().includes(q) &&
+    (!sp || x.sport === sp) &&
+    (!h || x.holat === h)
+  );
+  renderS();
+}
+function renderS() {
+  const { items, total } = pg(sF, sP, 10);
+  document.getElementById('sCount').textContent = total + ' ta';
+  const sBdg = { 'Tasdiqlangan': 'bGreen', "Ko'rib chiqilmoqda": 'bOrange', 'Rad etilgan': 'bRed' };
+  document.getElementById('sBody').innerHTML = items.map((s, i) => `
+    <tr>
+      <td style="color:var(--t3);font-family:var(--mono);font-size:11px">${s.id}</td>
+      <td><b>${s.name}</b></td>
+      <td>${s.yosh}</td>
+      <td>${s.mahalla}</td>
+      <td style="font-size:11px;color:var(--t2)">${s.tuman}</td>
+      <td>${s.maktab}</td>
+      <td>${s.sport}</td>
+      <td><b style="font-family:var(--mono);color:var(--accl)">${s.ball}</b></td>
+      <td><span class="bdg ${sBdg[s.holat] || 'bGray'}">${s.holat}</span></td>
+      <td><button class="btn btns" style="padding:4px 10px;font-size:11px" onclick="openUserDetailByName('${s.name}')">Ko\'rish</button></td>
+    </tr>`).join('');
+  buildPg('sPg', 'sInfo', total, sP, 10, 'goS');
+}
+function goS(p) { sP = p; renderS(); }
+function updateSeleksiyaStats() {
+  const src = sF && sF.length >= 0 ? sF : DB.s;
+  const total = DB.s.length;
+  const tasdiqlangan = DB.s.filter(x => x.holat === 'Tasdiqlangan').length;
+  const maktablar = new Set(DB.s.map(x => x.maktab)).size;
+  const buOy = DB.s.filter(x => x.ball >= 90).length;
+  const qabul = total > 0 ? Math.round(tasdiqlangan / total * 100) : 0;
+  const e1 = document.getElementById('sStatTotal');      if (e1) e1.textContent = formatCount(total);
+  const e2 = document.getElementById('sStatMaktab');     if (e2) e2.textContent = maktablar;
+  const e3 = document.getElementById('sStatQabul');      if (e3) e3.textContent = qabul + '%';
+  const e4 = document.getElementById('sStatBuOy');       if (e4) e4.textContent = buOy;
+}
+
+// ======== REYTING ========
+let rF = [...DB.r], rP = 1;
+function sortByTotalDesc(list) {
+  return [...list].sort((a, b) => (b.total || 0) - (a.total || 0));
+}
+function filterR() {
+  rP = 1;
+  const t = document.getElementById('rT').value;
+  const sp = document.getElementById('rSp').value;
+  let base = [...DB.r];
+  if (sp) {
+    const allowed = new Set(
+      DB.s
+        .filter(x => x.sport === sp)
+        .map(x => `${x.viloyat}|${x.tuman}|${x.mahalla}`)
+    );
+    base = DB.r.filter(x => allowed.has(`${x.viloyat}|${x.tuman}|${x.mahalla}`));
+  }
+  rF = sortByTotalDesc(base);
+  if (t === 'Viloyat reytingi') {
+    const vilMap = {};
+    base.forEach(x => {
+      if (!vilMap[x.viloyat]) vilMap[x.viloyat] = { mahalla: x.viloyat, tuman:'—', viloyat: x.viloyat, olimpiada:0, jismoniy:0, seleksiya:0, topshiriq:0 };
+      vilMap[x.viloyat].olimpiada += x.olimpiada;
+      vilMap[x.viloyat].jismoniy += x.jismoniy;
+      vilMap[x.viloyat].seleksiya += x.seleksiya;
+      vilMap[x.viloyat].topshiriq += x.topshiriq;
+    });
+    rF = sortByTotalDesc(Object.values(vilMap).map(v=>({...v, total: v.olimpiada+v.jismoniy+v.seleksiya+v.topshiriq})));
+  } else if (t === 'Tuman reytingi') {
+    const tumMap = {};
+    base.forEach(x => {
+      if (!tumMap[x.tuman]) tumMap[x.tuman] = { mahalla: x.tuman, tuman: x.tuman, viloyat: x.viloyat, olimpiada:0, jismoniy:0, seleksiya:0, topshiriq:0 };
+      tumMap[x.tuman].olimpiada += x.olimpiada;
+      tumMap[x.tuman].jismoniy += x.jismoniy;
+      tumMap[x.tuman].seleksiya += x.seleksiya;
+      tumMap[x.tuman].topshiriq += x.topshiriq;
+    });
+    rF = sortByTotalDesc(Object.values(tumMap).map(v=>({...v, total: v.olimpiada+v.jismoniy+v.seleksiya+v.topshiriq})));
+  }
+  rF = sortByTotalDesc(rF);
+  // Sarlavhalarni yangilash
+  const rHC = document.getElementById('rHeadCol');
+  const rHH = document.getElementById('rHeadHudud');
+  const rTT = document.getElementById('rTitle');
+  if(rHC){
+    if(t==='Viloyat reytingi'){rHC.textContent='Viloyat';if(rHH)rHH.style.display='none';if(rTT)rTT.textContent='Viloyatlar reytingi';}
+    else if(t==='Tuman reytingi'){rHC.textContent='Tuman';if(rHH){rHH.style.display='';rHH.textContent='Viloyat';}if(rTT)rTT.textContent='Tumanlar reytingi';}
+    else{rHC.textContent='Mahalla';if(rHH){rHH.style.display='';rHH.textContent='Hudud';}if(rTT)rTT.textContent='Mahallalar reytingi';}
+  }
+  renderR();
+}
+function renderR() {
+  rF = sortByTotalDesc(rF);
+  const { items, total } = pg(rF, rP, 10);
+  const mx = rF.length > 0 ? rF[0].total : 1;
+  document.getElementById('rBody').innerHTML = items.map((r, i) => {
+    const realI = (rP-1)*10 + i;
+    return `
+    <tr>
+      <td><div class="rank ${['r1','r2','r3'][realI] || 'rx'}">${realI+1}</div></td>
+      <td><b>${r.mahalla}</b></td>
+      <td style="font-size:11px;color:var(--t2)">${r.viloyat || ''}</td>
+      <td style="font-family:var(--mono)">${r.olimpiada}</td>
+      <td style="font-family:var(--mono)">${r.jismoniy}</td>
+      <td style="font-family:var(--mono)">${r.seleksiya}</td>
+      <td style="font-family:var(--mono)">${r.topshiriq}</td>
+      <td><b style="font-size:15px;color:var(--accl)">${r.total}</b></td>
+      <td style="min-width:115px">
+        <div class="prw">
+          <div class="prbar"><div class="prfill" style="width:${Math.round(r.total/mx*100)}%"></div></div>
+          <span class="prpct">${Math.round(r.total/mx*100)}%</span>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+  buildPg('rPg', 'rInfo', total, rP, 10, 'goR');
+}
+function goR(p) { rP = p; renderR(); }
+
+// ======== CHARTS ========
+function renderCharts() {
+  const source = mhF && mhF.length ? mhF : DB.mh;
+  const ageCounts = {
+    '7-14': source.reduce((sum, m) => sum + m.a7, 0),
+    '16-30': source.reduce((sum, m) => sum + m.a16, 0),
+    '31-55': source.reduce((sum, m) => sum + m.a31, 0),
+    '56-70+': source.reduce((sum, m) => sum + m.a56, 0)
+  };
+  const ages = [
+    { l: '7–14', v: ageCounts['7-14'], c: '#4f6ef7' },
+    { l: '16–30', v: ageCounts['16-30'], c: '#22c55e' },
+    { l: '31–55', v: ageCounts['31-55'], c: '#f97316' },
+    { l: '56–70+', v: ageCounts['56-70+'], c: '#ef4444' }
+  ];
+  const mx = Math.max(...ages.map(a => a.v), 1);
+  document.getElementById('ageChart').innerHTML = ages.map(a => `
+    <div class="bcol">
+      <div class="bvt">${a.v}</div>
+      <div class="brect" style="height:${Math.round(a.v/mx*95)}px;background:${a.c}18;border:1px solid ${a.c}40;border-bottom:3px solid ${a.c}"></div>
+      <div class="blbl">${a.l}</div>
+    </div>`).join('');
+
+  const keys = new Set(source.map(m => `${m.v}|${m.t}|${m.n}`));
+  const sportCounts = {};
+  DB.s
+    .filter(u => keys.has(`${u.viloyat}|${u.tuman}|${u.mahalla}`))
+    .forEach(u => { sportCounts[u.sport] = (sportCounts[u.sport] || 0) + 1; });
+  const sp = Object.entries(sportCounts).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([l,v],i)=>({l,v,c:['#4f6ef7','#22c55e','#ef4444','#a855f7','#f97316'][i]}));
+  const ms = sp.length ? Math.max(...sp.map(s => s.v)) : 1;
+  document.getElementById('sportChart').innerHTML = sp.map(s => `
+    <div class="bcol">
+      <div class="bvt">${s.v}</div>
+      <div class="brect" style="height:${Math.round(s.v/ms*95)}px;background:${s.c}18;border:1px solid ${s.c}40;border-bottom:3px solid ${s.c}"></div>
+      <div class="blbl">${s.l}</div>
+    </div>`).join('');
+}
+
+// ======== MODALS ========
+const MODALS = {
+  get addUser() {
+    const vo = REGIONS.map(r => `<option value="${r.viloyat}">${r.viloyat}</option>`).join('');
+    const so = SPORTLAR.map(s => `<option value="${s}">${s}</option>`).join('');
+    return `<div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> O'quvchi qo'shish</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+    <div class="fg"><label class="fl">Ism Familiya</label><input class="fi" id="uName" placeholder="Karimov Jasur"></div>
+    <div class="fg"><label class="fl">Yosh guruhi</label><select class="fi" id="uYosh"><option value="7-14">7-14 yosh</option><option value="16-30">16-30 yosh</option><option value="31-55">31-55 yosh</option><option value="56-70+">56-70+ yosh</option></select></div>
+    <div class="fg"><label class="fl">Viloyat</label><select class="fi" id="uVil" onchange="onUVilChange()"><option value="">-- Viloyat tanlang --</option>${vo}</select></div>
+    <div class="fg"><label class="fl">Tuman</label><select class="fi" id="uTum" onchange="onUTumChange()" disabled><option value="">-- Avval viloyat tanlang --</option></select></div>
+    <div class="fg"><label class="fl">Mahalla</label><select class="fi" id="uMah" disabled><option value="">-- Avval tuman tanlang --</option></select></div>
+    <div class="fg"><label class="fl">Sport turi</label><select class="fi" id="uSport">${so}</select></div>
+    <div class="mfoot"><button class="btn btns" onclick="closeM()">Bekor</button><button class="btn btnp" onclick="saveUser()">Saqlash</button></div>`;
+  },
+
+  addTest: `<div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg> Baholash qo'shish</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+  <div class="fg"><label class="fl">Foydalanuvchi</label><input class="fi" placeholder="Ism bo'yicha qidirish..."></div>
+  <div class="fg"><label class="fl">Yugurish (son)</label><input class="fi" type="number" placeholder="4.5"></div>
+  <div class="fg"><label class="fl">Sakrash (metr)</label><input class="fi" type="number" placeholder="1.8"></div>
+  <div class="fg"><label class="fl">Kuch (0-100)</label><input class="fi" type="number" placeholder="85"></div>
+  <div class="mfoot"><button class="btn btns" onclick="closeM()">Bekor</button><button class="btn btnp" onclick="saveM()">Saqlash</button></div>`,
+
+  addEvent: `<div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M17 12h-3v3h-2v-3h-3v-2h3V7h2v3h3v2zm2-9h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Tadbir qo'shish</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+  <div class="fg"><label class="fl">Tadbir nomi</label><input class="fi" placeholder="Mahalla chempionati 2026"></div>
+  <div class="fg"><label class="fl">Sana</label><input class="fi" type="date"></div>
+  <div class="fg"><label class="fl">Sport turi</label><select class="fi">${SPORTLAR.map(s=>`<option>${s}</option>`).join('')}</select></div>
+  <div class="fg"><label class="fl">Viloyat</label><select class="fi">${REGIONS.map(r=>`<option>${r.viloyat}</option>`).join('')}</select></div>
+  <div class="mfoot"><button class="btn btns" onclick="closeM()">Bekor</button><button class="btn btnp" onclick="saveM()">Saqlash</button></div>`,
+
+  addSel: `<div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg> Seleksiya qo'shish</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+  <div class="fg"><label class="fl">Foydalanuvchi</label><input class="fi" placeholder="Ism bo'yicha qidirish..."></div>
+  <div class="fg"><label class="fl">Sport maktabi</label><select class="fi">${REGIONS.flatMap(r=>r.tumanlar.map(t=>`<option>${t.maktab}</option>`)).join('')}</select></div>
+  <div class="fg"><label class="fl">Sport turi</label><select class="fi">${SPORTLAR.map(s=>`<option>${s}</option>`).join('')}</select></div>
+  <div class="fg"><label class="fl">Izoh</label><textarea class="fi" rows="3" placeholder="Qo'shimcha izoh..."></textarea></div>
+  <div class="mfoot"><button class="btn btns" onclick="closeM()">Bekor</button><button class="btn btnp" onclick="saveM()">Saqlash</button></div>`,
+
+  settings: `<div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg> Sozlamalar</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+  <div class="fg"><label class="fl">Interfeys mavzusi</label><select class="fi" id="settingsThemeSel"><option value="dark">Night</option><option value="light">Light</option><option value="gradient">3-rang</option></select></div>
+  <div class="fg"><label class="fl">Telefon formati</label><input class="fi" value="+998 xx xxx xx xx" disabled></div>
+  <div class="mfoot"><button class="btn btns" onclick="closeM()">Bekor</button><button class="btn btnp" onclick="saveSettingsFromModal()">Saqlash</button></div>`,
+};
+function openM(id) { document.getElementById('mContent').innerHTML = MODALS[id] || ''; document.getElementById('mbg').classList.add('on'); }
+function closeM() { document.getElementById('mbg').classList.remove('on'); }
+function bgC(e) { if (e.target === document.getElementById('mbg')) closeM(); }
+function saveM() { closeM(); toast("Muvaffaqiyatli saqlandi!", 'success'); }
+
+// === VILOYAT → TUMAN → MAHALLA KASKAD ===
+function onUVilChange() {
+  const vil = (document.getElementById('uVil')||{}).value||'';
+  const tSel = document.getElementById('uTum');
+  const mSel = document.getElementById('uMah');
+  if(!tSel||!mSel) return;
+  tSel.innerHTML = '<option value="">-- Tuman tanlang --</option>';
+  mSel.innerHTML = '<option value="">-- Avval tuman tanlang --</option>';
+  mSel.disabled = true;
+  if(!vil){tSel.disabled=true;return;}
+  const reg = REGIONS.find(r=>r.viloyat===vil);
+  if(!reg){tSel.disabled=true;return;}
+  reg.tumanlar.forEach(t=>{const o=document.createElement('option');o.value=t.tuman;o.textContent=t.tuman;tSel.appendChild(o);});
+  tSel.disabled=false;
+}
+function onUTumChange() {
+  const vil = (document.getElementById('uVil')||{}).value||'';
+  const tum = (document.getElementById('uTum')||{}).value||'';
+  const mSel = document.getElementById('uMah');
+  if(!mSel) return;
+  mSel.innerHTML = '<option value="">-- Mahalla tanlang --</option>';
+  if(!tum){mSel.disabled=true;return;}
+  const reg = REGIONS.find(r=>r.viloyat===vil);
+  const tObj = reg&&reg.tumanlar.find(t=>t.tuman===tum);
+  if(!tObj){mSel.disabled=true;return;}
+  tObj.mahallalar.forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;mSel.appendChild(o);});
+  mSel.disabled=false;
+}
+
+// === O'QUVCHI SAQLASH - barcha sahifalarga qo'shiladi ===
+function saveUser() {
+  const name  = (document.getElementById('uName') ||{}).value?.trim()||'';
+  const yosh  = (document.getElementById('uYosh') ||{}).value||'16-30';
+  const vil   = (document.getElementById('uVil')  ||{}).value||'';
+  const tum   = (document.getElementById('uTum')  ||{}).value||'';
+  const mah   = (document.getElementById('uMah')  ||{}).value||'';
+  const sport = (document.getElementById('uSport')||{}).value||'Futbol';
+  if(!name){toast("Ism familiyani kiriting",'error');return;}
+  if(!vil) {toast("Viloyat tanlang",'error');return;}
+  if(!tum) {toast("Tuman tanlang",'error');return;}
+  if(!mah) {toast("Mahalla tanlang",'error');return;}
+  const newId = DB.y.length>0 ? Math.max(...DB.y.map(u=>u.id))+1 : 1;
+  const reg = REGIONS.find(r=>r.viloyat===vil);
+  const maktab = (reg&&reg.tumanlar.find(t=>t.tuman===tum)||{}).maktab||tum;
+  // Yoshlar DB
+  DB.y.push({id:newId, name, yosh, mahalla:mah, tuman:tum, viloyat:vil, sport, ball:0, holat:"Ro'yxatdan o'tdi"});
+  // Jismoniy DB (baholanmagan)
+  DB.j.push({name, yosh:yosh==='7-14'?12:yosh==='16-30'?20:yosh==='31-55'?40:60, yg:yosh, sport, tuman:tum, viloyat:vil, mahalla:mah, yug:'—', sak:'—', kuch:0, total:0, daraja:'Qoniqarli'});
+  // Filtrlangan ro'yxatlarni yangilash
+  if(currentUserRole==='admin'){
+    yF=[...DB.y]; jF=[...DB.j];
+  } else {
+    const tDB=getTrainerDB(); yF=tDB.y; jF=tDB.j;
+  }
+  yP=1; jP=1;
+  closeM(); renderY(); updateYoshlarStats();
+  toast(name+" muvaffaqiyatli qo'shildi!",'success');
+}
+
+// === O'QUVCHI TAFSILOTLARI ===
+function openUserDetail(id) {
+  const u = DB.y.find(x=>x.id===id);
+  if(!u){toast("O'quvchi topilmadi",'error');return;}
+  _showUserModal(u);
+}
+function openUserDetailByName(name) {
+  const u = DB.y.find(x=>x.name===name);
+  if(u){_showUserModal(u);return;}
+  const j = DB.j.find(x=>x.name===name);
+  if(j){_showUserModal({id:0,name,yosh:j.yg||'16-30',mahalla:j.mahalla||'—',tuman:j.tuman,viloyat:j.viloyat,sport:j.sport,ball:j.total,holat:'Baholandi'});return;}
+  toast("O'quvchi topilmadi",'error');
+}
+function _showUserModal(u) {
+  const jR = DB.j.find(x=>x.name===u.name)||null;
+  const sR = DB.s.filter(x=>x.name===u.name);
+  const sBdg={'Tasdiqlangan':'bGreen',"Ko'rib chiqilmoqda":'bOrange','Rad etilgan':'bRed'};
+  const yTag={'7-14':'a7','16-30':'a16','31-55':'a31','56-70+':'a56'};
+  const hCls={"Seleksiya":"bGreen","Ro'yxatdan o'tdi":"bBlue","Test kutilmoqda":"bOrange","Baholandi":"bGray"};
+  const ini = u.name.split(' ').map(w=>w[0]||'').join('').slice(0,2).toUpperCase();
+  const baholash = (!jR||jR.yug==='—') ? `
+    <div style="background:var(--c2);border-radius:12px;padding:14px;margin-top:8px">
+      <div style="font-size:12px;font-weight:600;color:var(--t2);margin-bottom:10px">📝 Jismoniy baholash</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div><label style="font-size:11px;color:var(--t3)">Yugurish (s)</label><input id="bYug" class="fi" type="number" step="0.1" placeholder="4.5" style="margin-top:4px"></div>
+        <div><label style="font-size:11px;color:var(--t3)">Sakrash (m)</label><input id="bSak" class="fi" type="number" step="0.1" placeholder="1.8" style="margin-top:4px"></div>
+        <div style="grid-column:span 2"><label style="font-size:11px;color:var(--t3)">Kuch (0-100)</label><input id="bKuch" class="fi" type="number" placeholder="85" min="0" max="100" style="margin-top:4px"></div>
+      </div>
+      <button class="btn btnp" style="width:100%;margin-top:10px" onclick="saveBaholash('`+u.name+`')">Baholashni saqlash</button>
+    </div>` : `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+      <div style="background:var(--c2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:11px;color:var(--t3)">Yugurish</div><div style="font-size:22px;font-weight:700;font-family:var(--mono);color:var(--acc)">${jR.yug}s</div></div>
+      <div style="background:var(--c2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:11px;color:var(--t3)">Sakrash</div><div style="font-size:22px;font-weight:700;font-family:var(--mono);color:var(--grn)">${jR.sak}m</div></div>
+      <div style="background:var(--c2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:11px;color:var(--t3)">Kuch</div><div style="font-size:22px;font-weight:700;font-family:var(--mono);color:var(--org)">${jR.kuch}%</div></div>
+      <div style="background:var(--c2);border-radius:10px;padding:12px;text-align:center"><div style="font-size:11px;color:var(--t3)">Umumiy</div><div style="font-size:22px;font-weight:700;font-family:var(--mono);color:var(--accl)">${jR.total}</div></div>
+    </div>
+    <div style="margin-top:8px"><div class="prw"><div class="prbar" style="height:8px"><div class="prfill" style="width:${jR.total}%"></div></div><span class="prpct">${jR.total}%</span></div></div>`;
+  const selH = sR.length ? sR.map(s=>`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--c2);border-radius:8px;padding:10px 12px;margin-top:6px"><div><div style="font-size:12px;font-weight:600">${s.maktab}</div><div style="font-size:11px;color:var(--t3)">${s.sport} · ${s.ball} ball</div></div><span class="bdg ${sBdg[s.holat]||'bGray'}">${s.holat}</span></div>`).join('') : '<div style="color:var(--t3);font-size:13px;padding:8px 0">Seleksiyaga yuborilmagan</div>';
+  document.getElementById('mContent').innerHTML = `
+  <div class="mhdr"><div class="mtitle"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--acc)"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> O'quvchi tafsilotlari</div><button class="mclose" onclick="closeM()"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button></div>
+  <div style="display:flex;align-items:center;gap:14px;padding:14px 0 6px">
+    <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--grn));display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;flex-shrink:0">${ini}</div>
+    <div>
+      <div style="font-size:16px;font-weight:700">${u.name}</div>
+      <div style="font-size:12px;color:var(--t3);margin-top:2px">${u.mahalla!=='—'?u.mahalla+' · ':''}${u.tuman||''}</div>
+      <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
+        <span class="atag ${yTag[u.yosh]||'a7'}">${u.yosh}</span>
+        <span class="bdg bBlue" style="font-size:10px">${u.sport}</span>
+        <span class="bdg ${hCls[u.holat]||'bGray'}">${u.holat}</span>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:11px;font-weight:600;color:var(--t3);margin-top:12px;text-transform:uppercase;letter-spacing:.06em">📊 Jismoniy ko'rsatkichlar</div>
+  ${baholash}
+  <div style="font-size:11px;font-weight:600;color:var(--t3);margin-top:14px;text-transform:uppercase;letter-spacing:.06em">🏆 Seleksiya tarixi</div>
+  ${selH}
+  <div class="mfoot"><button class="btn btns" onclick="closeM()">Yopish</button><button class="btn btnp" onclick="sendToSel('${u.name}','${u.sport}')">Seleksiyaga yuborish</button></div>`;
+  document.getElementById('mbg').classList.add('on');
+}
+function saveBaholash(name) {
+  const yug  = parseFloat((document.getElementById('bYug') ||{}).value);
+  const sak  = parseFloat((document.getElementById('bSak') ||{}).value);
+  const kuch = parseInt  ((document.getElementById('bKuch')||{}).value);
+  if(isNaN(yug)||isNaN(sak)||isNaN(kuch)){toast("Barcha maydonlarni to'ldiring",'error');return;}
+  if(kuch<0||kuch>100){toast("Kuch 0-100 oralig'ida bo'lishi kerak",'error');return;}
+  const total = Math.min(Math.max(Math.round(50 + kuch*0.3 + (3/yug)*10 + sak*5), 60), 99);
+  const daraja = total>=90?"A'lo":total>=75?"Yaxshi":"Qoniqarli";
+  const ji = DB.j.findIndex(x=>x.name===name);
+  if(ji>=0){DB.j[ji].yug=yug.toFixed(1);DB.j[ji].sak=sak.toFixed(1);DB.j[ji].kuch=kuch;DB.j[ji].total=total;DB.j[ji].daraja=daraja;}
+  const yi = DB.y.findIndex(x=>x.name===name);
+  if(yi>=0){DB.y[yi].ball=total;DB.y[yi].holat='Baholandi';}
+  if(currentUserRole==='admin'){yF=[...DB.y];jF=[...DB.j];}else{const t=getTrainerDB();yF=t.y;jF=t.j;}
+  closeM(); renderY(); renderJ(); updateYoshlarStats();
+  toast(name+" baholash natijalari saqlandi!",'success');
+  setTimeout(()=>openUserDetailByName(name),400);
+}
+function sendToSel(name, sport) {
+  if(DB.s.find(s=>s.name===name)){toast(name+" allaqachon seleksiyada",'info');return;}
+  const u = DB.y.find(x=>x.name===name)||{};
+  const reg = REGIONS.find(r=>r.viloyat===u.viloyat);
+  const maktab = (reg&&reg.tumanlar.find(t=>t.tuman===u.tuman)||{}).maktab||u.tuman||'—';
+  const nid = DB.s.length>0?Math.max(...DB.s.map(x=>x.id))+1:1;
+  DB.s.push({id:nid,name,yosh:u.yosh||20,mahalla:u.mahalla||'—',tuman:u.tuman||'—',viloyat:u.viloyat||'—',maktab,sport,ball:u.ball||0,holat:"Ko'rib chiqilmoqda"});
+  if(currentUserRole==='admin'){sF=[...DB.s];}else{const t=getTrainerDB();sF=t.s;}
+  closeM(); renderS(); updateSeleksiyaStats();
+  toast(name+" seleksiyaga yuborildi!",'success');
+}
+
+// === TIZIMDAN CHIQISH ===
+let _logoutClick = 0;
+function doLogout() {
+  _logoutClick++;
+  if(_logoutClick===1){
+    toast("Tizimdan chiqish uchun yana bir marta bosing",'info');
+    setTimeout(()=>{_logoutClick=0;},3000);
+    return;
+  }
+  _logoutClick=0;
+  currentUserRole=null;
+  document.getElementById('app').style.display='none';
+  document.getElementById('loginPage').style.display='flex';
+  document.getElementById('passInp').value='';
+  ['resetCodeInp','newPassInp','adminLoginInp','adminPassInp'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  setAuthStep('phone');
+  const tab=document.querySelector('.tab[data-role="trainer"]')||document.querySelector('.tab:last-child');
+  if(tab)setRole(tab,'trainer');
+  toast("Tizimdan chiqdingiz");
+}
+
+// ======== EXPORT ========
+function toCSV(rows, headers) {
+  const esc = (val) => `"${String(val ?? '').replace(/"/g, '""')}"`;
+  const head = headers.map(h => esc(h.label)).join(',');
+  const body = rows.map(row => headers.map(h => esc(row[h.key])).join(',')).join('\n');
+  return `${head}\n${body}`;
+}
+function downloadCSV(filename, rows, headers) {
+  const csv = toCSV(rows, headers);
+  const blob = new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(link.href);
+}
+function getActivePageKey() {
+  const active = document.querySelector('.page.on');
+  if (!active || !active.id) return 'dashboard';
+  return active.id.replace('page-', '');
+}
+function exportData() {
+  const page = getActivePageKey();
+  const today = new Date().toISOString().slice(0, 10);
+  if (page === 'mahallalar') {
+    downloadCSV(`mahallalar_${today}.csv`, mhF.map(x => ({
+      mahalla: x.n, tuman: x.t, viloyat: x.v, yosh_7_14: x.a7, yosh_16_30: x.a16, yosh_31_55: x.a31, yosh_56_70: x.a56
+    })), [
+      { key: 'mahalla', label: 'Mahalla' }, { key: 'tuman', label: 'Tuman' }, { key: 'viloyat', label: 'Viloyat' },
+      { key: 'yosh_7_14', label: '7-14' }, { key: 'yosh_16_30', label: '16-30' }, { key: 'yosh_31_55', label: '31-55' }, { key: 'yosh_56_70', label: '56-70+' }
+    ]);
+  } else if (page === 'yoshlar') {
+    downloadCSV(`yoshlar_${today}.csv`, yF, [
+      { key: 'id', label: 'ID' }, { key: 'name', label: 'FIO' }, { key: 'yosh', label: 'Yosh guruhi' }, { key: 'mahalla', label: 'Mahalla' },
+      { key: 'tuman', label: 'Tuman' }, { key: 'viloyat', label: 'Viloyat' }, { key: 'sport', label: 'Sport' }, { key: 'ball', label: 'Ball' }, { key: 'holat', label: 'Holat' }
+    ]);
+  } else if (page === 'jismoniy') {
+    downloadCSV(`jismoniy_${today}.csv`, jF, [
+      { key: 'name', label: 'FIO' }, { key: 'yosh', label: 'Yosh' }, { key: 'sport', label: 'Sport' }, { key: 'yug', label: 'Yugurish' },
+      { key: 'sak', label: 'Sakrash' }, { key: 'kuch', label: 'Kuch' }, { key: 'total', label: 'Umumiy' }, { key: 'daraja', label: 'Daraja' }
+    ]);
+  } else if (page === 'tadbirlar') {
+    downloadCSV(`tadbirlar_${today}.csv`, tF, [
+      { key: 'name', label: 'Tadbir' }, { key: 'date', label: 'Sana' }, { key: 'sport', label: 'Sport' }, { key: 'nfar', label: 'Ishtirokchi' }, { key: 'holat', label: 'Holat' }
+    ]);
+  } else if (page === 'seleksiya') {
+    downloadCSV(`seleksiya_${today}.csv`, sF, [
+      { key: 'id', label: 'ID' }, { key: 'name', label: 'FIO' }, { key: 'yosh', label: 'Yosh' }, { key: 'mahalla', label: 'Mahalla' },
+      { key: 'tuman', label: 'Tuman' }, { key: 'viloyat', label: 'Viloyat' }, { key: 'maktab', label: 'Maktab' }, { key: 'sport', label: 'Sport' }, { key: 'ball', label: 'Ball' }, { key: 'holat', label: 'Holat' }
+    ]);
+  } else if (page === 'reyting') {
+    downloadCSV(`reyting_${today}.csv`, rF, [
+      { key: 'mahalla', label: 'Nomi' }, { key: 'viloyat', label: 'Viloyat' }, { key: 'olimpiada', label: 'Olimpiada' }, { key: 'jismoniy', label: 'Jismoniy' },
+      { key: 'seleksiya', label: 'Seleksiya' }, { key: 'topshiriq', label: 'Topshiriq' }, { key: 'total', label: 'Jami' }
+    ]);
+  } else {
+    downloadCSV(`dashboard_${today}.csv`, [{
+      mahallalar: DB.mh.length,
+      yoshlar: DB.y.length,
+      seleksiya: DB.s.length,
+      faol_tadbirlar: tData.filter(t => t.holat === 'Faol').length
+    }], [
+      { key: 'mahallalar', label: 'Mahallalar' },
+      { key: 'yoshlar', label: 'Yoshlar' },
+      { key: 'seleksiya', label: 'Seleksiya' },
+      { key: 'faol_tadbirlar', label: 'Faol tadbirlar' }
+    ]);
+  }
+  toast("Ma'lumotlar CSV ko'rinishida yuklandi", 'success');
+}
+
+// ======== TOAST ========
+const toastIcons = {
+  success: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>',
+  error: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>',
+  info: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>',
+};
+function toast(msg, type = 'info') {
+  const el = document.getElementById('toastEl');
+  document.getElementById('tMsg').textContent = msg;
+  const icon = document.getElementById('tIcon');
+  icon.innerHTML = toastIcons[type] || toastIcons.info;
+  icon.className = 'ticon ' + type;
+  el.className = 'toast on ' + type;
+  setTimeout(() => el.classList.remove('on'), 3200);
+}
+
+// ======== RESET ========
+function resetF(type) {
+  if (type === 'mh') { document.getElementById('mhS').value = ''; document.getElementById('mhT').value = ''; mhF = DB.mh; mhP = 1; renderMH(); }
+  else if (type === 'y') { ['yS','yY','yM','ySp','yH'].forEach(id => document.getElementById(id).value = ''); yF = DB.y; yP = 1; renderY(); }
+  else if (type === 'j') { ['jS','jY','jSp','jD'].forEach(id => document.getElementById(id).value = ''); jF = DB.j; jP = 1; renderJ(); }
+  else if (type === 't') { ['tS','tH','tSp'].forEach(id => document.getElementById(id).value = ''); tF = [...tData]; renderT(); }
+  else if (type === 's') { ['sS','sSp','sH'].forEach(id => document.getElementById(id).value = ''); sF = DB.s; sP = 1; renderS(); }
+  else if (type === 'r') { ['rT','rSp','rY'].forEach(id => document.getElementById(id).value = ''); rF = sortByTotalDesc(DB.r); rP = 1; renderR(); }
+  toast('Filtrlar tozalandi', 'info');
+}
+
+// ======== INIT ========
+function initAll() {
+  renderMH(); renderY(); renderJ(); renderT(); renderS(); renderR();
+  renderDashboardStats(); renderCharts();
+  updateYoshlarStats(); updateSeleksiyaStats();
+}
+
+function initAuthUI() {
+  const phoneInp = document.getElementById('phoneInp');
+  const passInp = document.getElementById('passInp');
+  const resetCodeInp = document.getElementById('resetCodeInp');
+  const newPassInp = document.getElementById('newPassInp');
+  phoneInp.value = PHONE_PREFIX;
+  phoneInp.addEventListener('input', () => {
+    if (currentLoginMode !== 'trainer') return;
+    const local = normalizePhone(phoneInp.value);
+    phoneInp.value = PHONE_PREFIX + formatPhoneValue(local);
+    if (authStep !== 'phone') setAuthStep('phone');
+  });
+  phoneInp.addEventListener('focus', () => {
+    if (!phoneInp.value.startsWith(PHONE_PREFIX)) {
+      const local = normalizePhone(phoneInp.value);
+      phoneInp.value = PHONE_PREFIX + formatPhoneValue(local);
+    }
+    if (phoneInp.setSelectionRange) {
+      const end = phoneInp.value.length;
+      phoneInp.setSelectionRange(end, end);
+    }
+  });
+  phoneInp.addEventListener('keydown', (e) => {
+    if (currentLoginMode !== 'trainer') return;
+    const prefixLen = PHONE_PREFIX.length;
+    if ((e.key === 'Backspace' || e.key === 'ArrowLeft') && phoneInp.selectionStart <= prefixLen) {
+      e.preventDefault();
+      return;
+    }
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      continueWithPhone();
+    }
+  });
+  const adminLoginInp = document.getElementById('adminLoginInp');
+  const adminPassInp = document.getElementById('adminPassInp');
+  if (adminLoginInp) {
+    adminLoginInp.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); doLogin(); }
+    });
+  }
+  if (adminPassInp) {
+    adminPassInp.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); doLogin(); }
+    });
+  }
+  passInp.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      doLogin();
+    }
+  });
+  if (resetCodeInp) {
+    resetCodeInp.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        doLogin();
+      }
+    });
+  }
+  if (newPassInp) {
+    newPassInp.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        doLogin();
+      }
+    });
+  }
+  const trainerTab = document.querySelector('.tab[data-role="trainer"]') || document.querySelector('.tab:last-child');
+  if (trainerTab) setRole(trainerTab, 'trainer');
+  else setAuthStep('phone');
+  updateHeaderClock();
+  setInterval(updateHeaderClock, 1000 * 30);
+}
+
+initTheme();
+initAuthUI();
+initAll();
+
+</script>
+</body>
+
+</html>
